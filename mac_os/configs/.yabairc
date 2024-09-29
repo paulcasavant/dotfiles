@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+
+# ========================
+# App-specific Tiling Rules
+# ========================
+
+# By default, disable tiling for all apps (currently commented out).
+# Uncomment if you want this behavior globally:
+# yabai -m rule --add app=".*" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+
+# Enable tiling for specific apps:
+# iTerm2, Firefox, VS Code, Mail, and Finder.
+# Uncomment and customize as needed:
+# yabai -m rule --add app="^iTerm2$" manage=on
+# yabai -m rule --add app="^Firefox$" manage=on
+# yabai -m rule --add app="^Code$" manage=on
+# yabai -m rule --add app="^Mail$" manage=on
+# yabai -m rule --add app="^Finder$" manage=on
+
+# ====================
+# General Window Layout
+# ====================
+
+# Set the layout mode for window management:
+# bsp = Binary Space Partitioning (tiling)
+# float = Floating windows (default)
+yabai -m config layout bsp
+
+# Control how new windows are placed in the BSP layout:
+# second_child: New window spawns to the right (vertical split) 
+#               or bottom (horizontal split)
+yabai -m config window_placement second_child
+
+# =================
+# Window Appearance
+# =================
+
+# Set the padding around windows:
+yabai -m config top_padding 3
+yabai -m config bottom_padding 3
+yabai -m config left_padding 3
+yabai -m config right_padding 3
+
+# Set the gap between windows:
+yabai -m config window_gap 3
+
+# ====================
+# Mouse and Focus Behavior
+# ====================
+
+# Disable mouse follow behavior for focus:
+# Prevents focus switching when moving the mouse over windows.
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse off
+
+# Set modifier key (alt) to enable mouse interactions with windows:
+# Left-click to move, right-click to resize.
+yabai -m config mouse_modifier alt
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+
+# ==========================
+# Window Management Behavior
+# ==========================
+
+# Automatically balance windows when a new one is added or resized:
+# Ensures other windows adjust to fit the new window.
+yabai -m config auto_balance on
+
+# Insert feedback color for visual indication of actions like window splits.
+yabai -m config insert_feedback_color 0x30047AFF
+
+# Set window splitting behavior:
+# split_ratio: Controls the ratio for splitting windows (50% by default).
+# split_type: Automatically determines split direction (horizontal/vertical).
+yabai -m config split_ratio 0.50
+yabai -m config split_type auto
+
+# =================================
+# Script Completion Notification
+# =================================
+
+# Print a confirmation message once the configuration is loaded.
+printf "yabai: configuration loaded...\\n"

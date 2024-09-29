@@ -1,0 +1,34 @@
+local config = {}
+
+local function get_script_path()
+    -- Source the `.zshenv` file and echo the environment variable
+    local script_path = hs.execute("zsh -c 'source ~/.zshenv && echo $SCRIPT_PATH'")
+
+    -- Remove any trailing newlines (if needed)
+    script_path = script_path and script_path:gsub("%s+$", "")
+
+    -- Check if the script path was retrieved successfully
+    if script_path == nil or script_path == "" then
+        hs.alert.show("SCRIPT_PATH not found or is empty")
+        return nil
+    end
+
+    return script_path
+end
+
+------------------------------ DEVICES -------------------------------
+config.WEBCAM_NAME = "" -- Name of the device
+config.DAC_NAME = "" -- Name of the audio device
+config.CONNECTED_TV_IDENTIFIERS = {"", ""} -- Used to identify the TV when it's connected to this computer
+config.TV_NAME = "" -- Name of your TV, set when you run `lgtv auth`
+config.TV_MAC_ADDR = "" -- MAC address
+config.LAPTOP_TV_INPUT = "HDMI_3" -- Input to which your Mac is connected
+config.PC_TV_INPUT = "HDMI_4" -- Input to which your PC is connected
+
+------------------------------- PATHS --------------------------------
+config.SCRIPT_PATH = get_script_path()
+config.PYTHON_PATH = "" -- Full path to tool including executable -- Binary path
+config.BETTER_DISPLAY_FOLDER_PATH = "/Applications/BetterDisplay.app/Contents/MacOS/" -- Directory path
+config.LGTV_PATH = "~/bin/lgtv" -- Binary path
+
+return config
