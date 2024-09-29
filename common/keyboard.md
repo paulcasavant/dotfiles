@@ -43,8 +43,6 @@
     * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>;</kbd> -> <kbd>End</kbd>
 * <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>N</kbd> -> <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>Right</kbd> (Next Workspace)
 * <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> -> <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>Left</kbd> (Previous Workspace)
-* <kbd>Cmd</kbd> + <kbd>H</kbd> -> <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>Left</kbd> (Left Workspace)
-* <kbd>Cmd</kbd> + <kbd>L</kbd> -> <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>Right</kbd> (Right Workspace)
 * <kbd>Home</kbd> -> <kbd>Cmd</kbd> + <kbd>Left</kbd> (Home)
 * <kbd>End</kbd> -> <kbd>Cmd</kbd> + <kbd>Right</kbd> (End)
 * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>Home</kbd> -> <kbd>Cmd</kbd> + <kbd>Up</kbd> (BOF)

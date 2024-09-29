@@ -17,3 +17,7 @@ fi
 if [ ! -L $HOME/.skhdrc ]; then
     ln -s $CONFIG_PATH/.skhdrc $HOME/.skhdrc
 fi
+
+if [ ! -L $HOME/.config/karabiner/karabiner.json ]; then
+    ln -s $CONFIG_PATH/karabiner-elements/karabiner.json $HOME/.config/karabiner/karabiner.json
+fi
