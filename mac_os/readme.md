@@ -193,3 +193,5 @@
 * [Klack](https://apps.apple.com/us/app/klack/id6446206067?mt=12)
 * [TechniCalc Calculator](https://apps.apple.com/us/app/technicalc-calculator/id1504965415)
 * [Maccy](https://maccy.app/)
+* [gitleaks](https://github.com/gitleaks)
+    * `brew install gitleaks`
