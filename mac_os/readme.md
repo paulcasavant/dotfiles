@@ -1,8 +1,10 @@
 # macOS
-## Configurations
-
-* `cp ~/repos/dotfiles/mac_os/configs/.zshrc ~ && source ~/.zshrc`
-* `cp ~/repos/dotfiles/mac_os/configs/.zshenv ~ && source ~/.zshenv`
+## Setup
+* Add configuration info to Hammerspoon `config.lua`
+  1. `cp $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua.template $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua`
+  2. Populate `config.lua` with configuration info
+  3. Reload *Hammerspoon*
+* Run the environment setup script: `source $HOME/repos/dotfiles/mac_os/scripts/setup.sh`
 
 ## Settings
   * Enable key-repeating
@@ -12,7 +14,7 @@
   * Enable keyboard navigation: Settings > Keyboard -> *Enable Keyboard navigation*
   * Set function keys as default
     * Settings > Keyboard -> Keyboard Shortcuts... > Function Keys > Enable *Use F1, F2, etc. keys as standard function keys*
-  * Settings > Lock Screen > Set Turn display off on power adapter when inactive to For 5 minutes
+  * Settings > Lock Screen > Set Turn display off on power adapter when inactive to For 10 minutes
   * Settings > Lock Screen > *Set Start Screen Saver when inactive* to *Never*
   * Sounds > Sound Effects > Change *Alert Sound* to *Jump*
   * Finder > Settings... > Advanced > Set *When performing a search* to *Search the Current Folder*
@@ -188,9 +190,8 @@
 * [GIMP](https://www.gimp.org/downloads/)
 * [Inkscape](https://inkscape.org/)
 * [Inspect](https://github.com/mhdhejazi/Inspect)
-* [Caffeinated](https://apps.apple.com/us/app/caffeinated-anti-sleep-app/id1362171212?mt=12)
-    * Disable Activate at launch
 * [Klack](https://apps.apple.com/us/app/klack/id6446206067?mt=12)
+* [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
 * [TechniCalc Calculator](https://apps.apple.com/us/app/technicalc-calculator/id1504965415)
 * [Maccy](https://maccy.app/)
 * [gitleaks](https://github.com/gitleaks)

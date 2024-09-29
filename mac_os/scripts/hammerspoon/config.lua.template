@@ -17,18 +17,38 @@ local function get_script_path()
 end
 
 ------------------------------ DEVICES -------------------------------
-config.WEBCAM_NAME = "" -- Name of the device
-config.DAC_NAME = "" -- Name of the audio device
-config.CONNECTED_TV_IDENTIFIERS = {"", ""} -- Used to identify the TV when it's connected to this computer
-config.TV_NAME = "" -- Name of your TV, set when you run `lgtv auth`
-config.TV_MAC_ADDR = "" -- MAC address
-config.LAPTOP_TV_INPUT = "HDMI_3" -- Input to which your Mac is connected
-config.PC_TV_INPUT = "HDMI_4" -- Input to which your PC is connected
+-- Device name from `/opt/homebrew/bin/SwitchAudioSource -a`
+config.WEBCAM_NAME = ""
+
+-- Device name from `/opt/homebrew/bin/SwitchAudioSource -a`
+config.DAC_NAME = ""
+
+-- Used to identify the TV when it's connected to this computer
+config.CONNECTED_TV_IDENTIFIERS = {"LG TV", "LG TV SSCR2"}
+
+-- TV name configured with `~/bin/lgtv auth` or in `~/.lgtv/config.json`
+config.TV_NAME = ""
+
+-- MAC address
+config.TV_MAC_ADDR = ""
+
+-- Input to which your Mac is connected
+config.LAPTOP_TV_INPUT = "HDMI_3"
+
+-- Input to which your PC is connected
+config.PC_TV_INPUT = "HDMI_4"
 
 ------------------------------- PATHS --------------------------------
+-- Script directory
 config.SCRIPT_PATH = get_script_path()
-config.PYTHON_PATH = "" -- Full path to tool including executable -- Binary path
-config.BETTER_DISPLAY_FOLDER_PATH = "/Applications/BetterDisplay.app/Contents/MacOS/" -- Directory path
-config.LGTV_PATH = "~/bin/lgtv" -- Binary path
+
+-- Binary path
+config.PYTHON_PATH = ""
+
+-- Directory path
+config.BETTER_DISPLAY_FOLDER_PATH = "/Applications/BetterDisplay.app/Contents/MacOS/"
+
+ -- Binary path
+config.LGTV_PATH = "~/bin/lgtv"
 
 return config
