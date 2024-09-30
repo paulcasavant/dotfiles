@@ -175,8 +175,9 @@ alt + shift - r : yabai -m query --windows --space | jq 'map(select(."is-minimiz
 # Application Launching
 # =====================
 
-# Launch a terminal (Kitty) in a single instance
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# Launch a terminal in a single instance
+cmd - return : open -na "iTerm"
+# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # Launch Firefox using a custom script
 cmd + shift - return : /bin/zsh -c "\$SCRIPT_PATH/yabai/open_firefox.sh"
