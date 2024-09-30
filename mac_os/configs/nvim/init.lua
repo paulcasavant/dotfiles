@@ -1,17 +1,6 @@
 
 -- init.lua
-local config_path = vim.fn.resolve(vim.fn.stdpath('config'))
-print(config_path)
--- local config_path = vim.fn.resolve(vim.fn.stdpath('config'))
--- package.path = package.path .. ';' .. config_path .. '/lua/?.lua'
 
--- Automatically install packer if not installed
--- local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
--- if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
---   vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
---   vim.cmd [[packadd packer.nvim]]
--- end
--- init.lua
 -- Automatically install packer if not installed
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -23,7 +12,7 @@ end
 vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])
 
 -- Plugins installation and management
-require('plugins')
+require('core.plugins')
 
 -- General settings
 vim.o.number = true                -- Enable line numbers
@@ -48,20 +37,35 @@ vim.g.mapleader = ' '  -- Space as the leader key
 
 -- Keybindings
 vim.api.nvim_set_keymap('n', '<Leader>pv', ':Ex<CR>', { noremap = true })  -- File Explorer
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>dw',
+  '<cmd>lua vim.diagnostic.open_float()<CR>',
+  { noremap = true, silent = true }
+)
 
 -- Plugin configurations
-require('lsp')       -- LSP settings
-require('treesitter')  -- Treesitter settings
-require('telescope')   -- Telescope settings
-require('gitsigns')    -- Gitsigns settings
-require('lualine')     -- Statusline settings
-require('nvimtree')    -- File explorer settings
+require('plugins.lsp_config')       -- LSP settings
+require('plugins.treesitter_config')  -- Treesitter settings
+require('plugins.telescope_config')   -- Telescope settings
+require('plugins.gitsigns_config')    -- Gitsigns settings
+require('plugins.lualine_config')     -- Statusline settings
+require('plugins.nvimtree_config')    -- File explorer settings
 
 -- Autocompletion settings
-require('cmp_config')
+require('plugins.cmp_config')
 
 -- Auto pairs (for automatically closing brackets, etc.)
-require('nvim-autopairs').setup{}
+-- require('lua.nvim-autopairs').setup{}
 
 -- Set colorscheme
 vim.cmd [[colorscheme tokyonight]]
+-- vim.cmd [[colorscheme gruvbox]]
+
+-- Enable mouse
+vim.o.mouse = 'a'
+
+-- Automatically show diagnostics when hovering with the mouse
+vim.cmd [[
+  autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})
+]]

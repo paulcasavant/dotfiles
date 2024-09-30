@@ -1,5 +1,5 @@
 
--- telescope.lua
+-- telescope_config.lua
 
 local telescope = require('telescope')
 telescope.setup {

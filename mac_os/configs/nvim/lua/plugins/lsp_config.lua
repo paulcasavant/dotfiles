@@ -1,4 +1,4 @@
--- lsp.lua
+-- lsp_config.lua
 
 local lspconfig = require('lspconfig')
 

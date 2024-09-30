@@ -1,4 +1,4 @@
 .DS_Store
 macOS/.DS_Store
-plugin/
+mac_os/configs/nvim/plugin/
 config.lua

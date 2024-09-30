@@ -1,5 +1,5 @@
 
--- treesitter.lua
+-- treesitter_config.lua
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "lua", "python", "javascript", "html", "css" }, -- Add languages as needed

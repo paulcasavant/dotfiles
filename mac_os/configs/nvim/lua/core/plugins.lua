@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
 
   -- Colorscheme
+  -- use 'ellisonleao/gruvbox.nvim'
   use 'folke/tokyonight.nvim'
 
   -- Automatically set up configuration after cloning packer.nvim
