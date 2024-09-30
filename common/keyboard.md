@@ -100,7 +100,7 @@
 * <kbd>Hyper</kbd> + <kbd>2</kbd> -> Set Audio Output to Speaker, Input to Webcam
 * <kbd>Hyper</kbd> + <kbd>1</kbd> -> Switch TV Input to to PC
 * <kbd>Hyper</kbd> + <kbd>2</kbd> -> Switch TV Input to Laptop
-* <kbd>Hyper</kbd> + <kbd>Tab</kbd> -> Toggle Fn Keys
+* <kbd>Ctrl</kbd> + <kbd>Tab</kbd> -> Toggle Fn Keys
 
 ### BetterTouchTool
 * <kbd>Alt</kbd> (Tab) + <kbd>1</kbd> -> Switch to Desktop 1

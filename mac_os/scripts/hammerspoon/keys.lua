@@ -152,7 +152,7 @@ end)
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Hyper+Tab -> Toggle Fn Keys
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-hs.hotkey.bind(hyper, "tab", function()
+hs.hotkey.bind("ctrl", "tab", function()
   hs.execute(string.format("osascript %s/hammerspoon/toggle_func_keys.scpt", config.SCRIPT_PATH))
   hs.alert.show("Toggle Fn")
 end)

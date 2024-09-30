@@ -8,6 +8,7 @@
 # Uncomment if you want this behavior globally:
 # yabai -m rule --add app=".*" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Telegram$" manage=off
 
 # Enable tiling for specific apps:
 # iTerm2, Firefox, VS Code, Mail, and Finder.

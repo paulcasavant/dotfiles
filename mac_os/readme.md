@@ -7,10 +7,7 @@
 * Run the environment setup script: `source $HOME/repos/dotfiles/mac_os/scripts/setup.sh`
 
 ## Settings
-  * Enable key-repeating
-    1. `defaults write -g ApplePressAndHoldEnabled -bool false`
-    2. Logout and login again
-      
+  * Enable key-repeating: `defaults write -g ApplePressAndHoldEnabled -bool false`
   * Enable keyboard navigation: Settings > Keyboard -> *Enable Keyboard navigation*
   * Set function keys as default
     * Settings > Keyboard -> Keyboard Shortcuts... > Function Keys > Enable *Use F1, F2, etc. keys as standard function keys*
@@ -127,6 +124,7 @@
 * [yabai](https://github.com/koekeishiya/yabai/wiki)
   * `brew install koekeishiya/formulae/yabai`
   * `brew install terminal-notifier`
+  * Stop yabai from running at login: System Settings > General > Login Items & Extensions > disable *yabai*
 * [tadam](https://apps.apple.com/us/app/tadam/id531349534?mt=12)
 * [Rocket](https://matthewpalmer.net/rocket/)
     * Preferences > General -> Enable *Use double key trigger*
@@ -194,5 +192,12 @@
 * [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
 * [TechniCalc Calculator](https://apps.apple.com/us/app/technicalc-calculator/id1504965415)
 * [Maccy](https://maccy.app/)
+* [neovim](https://neovim.io/)
+    * `brew install neovim`
+    * Install packages after adding configs: `:PackerSync`
 * [gitleaks](https://github.com/gitleaks)
     * `brew install gitleaks`
+* [lua-language-server]()
+    * `brew install lua-language-server`
+brew install font-hack-nerd-font
+    * iTerm > Settings > Profiles > Text > Set Font to *Hack Nerd Font Mono*

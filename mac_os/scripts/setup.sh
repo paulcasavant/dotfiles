@@ -32,3 +32,6 @@ create_symlink "$CONFIG_PATH/karabiner-elements/karabiner.json" "$HOME/.config/k
 
 # Symlink .hammerspoon directory
 create_symlink "$SCRIPT_PATH/hammerspoon" "$HOME/.hammerspoon"
+
+# Symlink neovim configs directory
+create_symlink "$CONFIG_PATH/nvim" "$HOME/.config/nvim"
