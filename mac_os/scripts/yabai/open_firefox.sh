@@ -11,7 +11,7 @@ else
 fi
 
 # Wait for a moment to ensure the window has time to open
-sleep 1
+sleep 0.5
 
 # Focus the Firefox window using yabai
 yabai -m window --focus "$(yabai -m query --windows | jq -r '.[] | select(.app == "Firefox") | .id')"
