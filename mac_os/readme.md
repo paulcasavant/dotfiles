@@ -25,25 +25,21 @@
 
 ## Applications
 * [Menu Bar Controller for Sonos](https://apps.apple.com/us/app/menu-bar-controller-for-sonos/id1357379892?mt=12)
-    * Settings > Shortcuts > Set *Increase/Decrease volume on current group* to <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Q</kbd/<kbd>E</kbd>
-    * Settings > Shortcuts > Uncheck Show pop-up when using shortcuts
+    * Settings > Shortcuts > Set *Increase/Decrease volume on current group* to <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Q</kbd>/<kbd>E</kbd>
+    * Settings > Shortcuts > Uncheck *Show pop-up when using shortcuts*
 * [MagicQuit](https://magicquit.com/)
 * [VIA](https://github.com/the-via/releases/releases)
 * [ChatGPT](https://openai.com/chatgpt/download/)
 * [AppCleaner](https://freemacsoft.net/appcleaner/)
 * [LG TV Control for macOS](https://github.com/cmer/lg-tv-control-macos)
-  * Settings > Lock Screen > Set "Turn display off" settings to appropriate timeout
-  * Settings > Battery > Options... Enable Prevent automatic sleeping on power adapter when the display is off
+  * Settings > Lock Screen > Set *Turn display off* settings to an appropriate timeout
+  * Settings > Battery > Options... > Enable *Prevent automatic sleeping on power adapter when the display is off*
   * Manually test sleep mode using `pmset sleepnow` and `pmset displaysleepnow`
   * Write TV to config file: `~/bin/lgtv auth <IP> "BedroomTV"` 
   * Set TV as default: `~/bin/lgtv setDefault "BedroomTV"` 
   * Test connection: `~/bin/lgtv off && sleep 2 && ~/bin/lgtv on` 
 * [Homebrew](https://brew.sh/)
-* neofetch: `brew install neofetch`
-* ShortcutDetective: `brew install --cask shortcutdetective`
-* Warp: `brew install warp`  
-* SwitchAudioSource: `brew install switchaudio-osx`
-* nmap: `brew install nmap`
+* [ShortcutDetective](https://www.irradiatedsoftware.com/labs/): `brew install --cask shortcutdetective`
 * [Obsidian](https://obsidian.md/)
 * [LM Studio](https://lmstudio.ai/)
 * [Dropover](https://apps.apple.com/us/app/dropover-easier-drag-drop/id1355679052?mt=12)
@@ -61,23 +57,20 @@
   * Profiles > Window
     * Transparency: `2`
     * Blur: `2`
-  * Preferences > Appearence > General > Set Theme to "Minimal"
-  * Profiles > Default > Keys > Key Mappings > +
-    * Set Keyboard Shortcut to `command`+`left` and Action to Send Hex Code 0x01 for Home
-    * Set Keyboard Shortcut to `command`+`right` and Action to Send Hex Code 0x05 for End
+  * Preferences > Appearence > General > Set *Theme* to *Minimal*
+  * Profiles > Default > Keys > Key Mappings > Click *+*
+    * Set *Keyboard Shortcut* to `command`+`left` and Action to *Send Hex Code* 0x01 for Home
+    * Set *Keyboard Shortcut* to `command`+`right` and *Action* to *Send Hex Code* 0x05 for End
 * [Python](https://www.python.org/downloads/macos/)
+* [SwitchAudioSource](https://github.com/deweller/switchaudio-osx): `brew install switchaudio-osx`
 * [BetterDisplay](https://github.com/waydabber/BetterDisplay)
-  * If having fuzzy display issues, associate LG C1 with a virtual screen (800x600) that mirrors the LG C1 to fix scaling issues
   * Set resolution to 2304x1296 and enable HDR
-  * Disable volume control (this will conflict with Hammerspoon)
-    * Settings > Keyboard > Disable Listen to native audio keys
-  * Settings > LG TV SSCR2 > Video Control Settings > Enable Dim display brightness on screen saver or lock and set to 50%
+  * Disable volume control (conflict with Hammerspoon): Settings > Keyboard > Disable *Listen to native audio keys*
+  * Settings > LG TV SSCR2 > Video Control Settings > Enable *Dim display brightness on screen saver or lock* and set to *50%*
 * [Hammerspoon](https://github.com/Hammerspoon/hammerspoon/releases/)
   1. `pip install wakeonlan`
-  2. Edit `scripts/config.lua` and update the variables
-  3. Copy `scripts/hammerspoon/*` to `~/.hammerspoon/` and reload
+  2. Edit `scripts/config.lua` and update the configuration variables
 * [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
-    * Use Complex Modifications from `scripts/karabiner-elements/karabiner.json`
 * [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/all/#product-desktop-release)
   * Enable Vimium C Homepage
     1. Go to the [debugging](about:debugging#/runtime/this-firefox) page in firefox and find the <EXTENSION_ID> for the *NewTab Adapter* extension
@@ -124,10 +117,10 @@
 * [yabai](https://github.com/koekeishiya/yabai/wiki)
   * `brew install koekeishiya/formulae/yabai`
   * `brew install terminal-notifier`
-  * Stop yabai from running at login: System Settings > General > Login Items & Extensions > disable *yabai*
+  * Stop *yabai* from running at login: System Settings > General > Login Items & Extensions > Unset *yabai*
 * [tadam](https://apps.apple.com/us/app/tadam/id531349534?mt=12)
 * [Rocket](https://matthewpalmer.net/rocket/)
-    * Preferences > General -> Enable *Use double key trigger*
+  * Preferences > General -> Enable *Use double key trigger*
   * Add to Disabled Apps:
     * Telegram
     * Visual Studio Code 
@@ -136,50 +129,50 @@
   * Scrolling > Set Smoothness to Regular
   * Scrolling > Set Speed to High
 * [Raycast](https://www.raycast.com/)
-    - Applications
-    - Calculator
-    - Calendar
-    - Clipboard History
-    - Color Picker
-    - Define Word
-    - Developer
-    - Floating Notes
-    - Kill Process
-    - Navigation
-    - Quicklinks
-    - Raycast
-    - Raycast AI
-    - Raycast Settings
-    - Raycast for Teams
-    - Screenshots
-    - Script Commands
-    - Search Contacts
-    - Search Emoji & Symbols
-    - Search Files
-    - Shortcuts
-    - Snippets
-    - Start Typing Practice
-    - System
-    - System Settings
-    - Test Internet Speed
-    - Translate
-    - Visual Studio Code
-    - Window Management
-    - Yabai
+  * Applications
+  * Calculator
+  * Calendar
+  * Clipboard History
+  * Color Picker
+  * Define Word
+  * Developer
+  * Floating Notes
+  * Kill Process
+  * Navigation
+  * Quicklinks
+  * Raycast
+  * Raycast AI
+  * Raycast Settings
+  * Raycast for Teams
+  * Screenshots
+  * Script Commands
+  * Search Contacts
+  * Search Emoji & Symbols
+  * Search Files
+  * Shortcuts
+  * Snippets
+  * Start Typing Practice
+  * System
+  * System Settings
+  * Test Internet Speed
+  * Translate
+  * Visual Studio Code
+  * Window Management
+  * Yabai
 * [Calendar 366 II](https://apps.apple.com/us/app/calendar-366-ii/id1265895169?mt=12)
 * [Logitech G HUB (G502 mouse)](https://www.logitechg.com/en-us/innovation/g-hub.html)
-  * Assign Mouse Button G4/G5 to macros for Forward/Back
-    * Forward: `Cmd+]`
-      * Back: `Cmd+[`
-  * Assign Mouse Button G7/G8 to G4/G5 (Mac Mouse Fix)
+  * Assign Mouse Buttons G4/G5 to macros for Forward/Back
+    * Forward: <kbd>Cmd</kbd> + <kbd>]</kbd>
+    * Back: <kbd>Cmd</kbd> + <kbd>[</kbd>
+  * Assign Mouse Buttons G7/G8 to G4/G5 (Mac Mouse Fix)
   * Assign the `Onboard Profile Cycle` button to launch Spotlight
 * [TextSniper](https://apps.apple.com/us/app/textsniper-ocr-copy-paste/id1528890965?mt=12)
 * [InYourFace](https://apps.apple.com/us/app/in-your-face-meeting-reminder/id1476964367?mt=12)
 * [Swish](https://highlyopinionated.co/swish/)
     * Advanced > Keyboard -> Disable Arrow Hotkeys (Allows PageUp/PageDown to be used) 
 * [Multitouch](https://multitouch.app/)
-    * Three Finger Touch -> Middle Click
-    * Three Finger Click -> Middle Click
+    * Trackpad > Three Finger Touch -> Middle Click
+    * Trackpad > Three Finger Click -> Middle Click
 * [Hidden Bar](https://apps.apple.com/us/app/hidden-bar/id1452453066?mt=12)
 * [Gestimer](https://apps.apple.com/us/app/gestimer-2/id6447125648?mt=12)
 * [WaterMinder](https://apps.apple.com/us/app/waterminder-water-tracker/id1415257369?mt=12)
@@ -192,12 +185,18 @@
 * [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
 * [TechniCalc Calculator](https://apps.apple.com/us/app/technicalc-calculator/id1504965415)
 * [Maccy](https://maccy.app/)
+* [tmux](https://github.com/tmux/tmux/wiki)
+  * `brew install tmux`
+* [neofetch](https://github.com/dylanaraps/neofetch): `brew install neofetch`
+* [nmap](https://nmap.org/): `brew install nmap`
 * [neovim](https://neovim.io/)
-    * `brew install neovim`
-    * Install packages after adding configs: `:PackerSync`
+  * `brew install neovim`
+  * Install *neovim* Python IPC
+    * `pip install pynvim`
+  * Install font: `brew install font-hack-nerd-font`
+    * iTerm2 > Settings > Profiles > Text > Set Font to *Hack Nerd Font Mono*
+  * Install Lua language server: `brew install lua-language-server`
+  * Enable tmux clipboard support: iTerm2 > Settings... > General > Selection Enable *Applications in terminal may access clipboard*
+  * Install packages in *neovim* after linking configs: `:PackerSync`
 * [gitleaks](https://github.com/gitleaks)
     * `brew install gitleaks`
-* [lua-language-server]()
-    * `brew install lua-language-server`
-brew install font-hack-nerd-font
-    * iTerm > Settings > Profiles > Text > Set Font to *Hack Nerd Font Mono*

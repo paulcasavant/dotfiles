@@ -30,8 +30,12 @@ create_symlink "$CONFIG_PATH/.skhdrc" "$HOME/.skhdrc"
 # Symlink karabiner.json config file
 create_symlink "$CONFIG_PATH/karabiner-elements/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 
+# Symlink tmux config file
+create_symlink "$CONFIG_PATH/.tmux.conf" "$HOME/.tmux.conf"
+
 # Symlink .hammerspoon directory
 create_symlink "$SCRIPT_PATH/hammerspoon" "$HOME/.hammerspoon"
 
 # Symlink neovim configs directory
 create_symlink "$CONFIG_PATH/nvim" "$HOME/.config/nvim"
+
