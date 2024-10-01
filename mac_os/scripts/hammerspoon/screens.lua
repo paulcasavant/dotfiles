@@ -141,16 +141,10 @@ end
 function screens.HandleSleepChange(eventType)
   screens.lgtv_log_d("Received event: "..(eventType or ""))
 
-  if screens.lgtv_disabled() then
-    screens.lgtv_log_d("LGTV feature disabled. Skipping.")
-    return
-  end
-
   if (eventType == hs.caffeinate.watcher.screensDidWake or
       eventType == hs.caffeinate.watcher.systemDidWake or
       eventType == hs.caffeinate.watcher.screensDidUnlock) then
-
-    if not screens.lgtv_disabled() and screens.lgtv_is_connected() then
+    if screens.lgtv_is_connected() then
       common.Sleep(2)
       hs.execute(string.format("%s -c \"import wakeonlan; wakeonlan.send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
       screens.lgtv_exec_command("on") -- WOL IP address
@@ -168,7 +162,7 @@ function screens.HandleSleepChange(eventType)
 
   if ((eventType == hs.caffeinate.watcher.screensDidSleep or
       eventType == hs.caffeinate.watcher.systemWillPowerOff) and
-      not screens.lgtv_disabled() and screens.lgtv_is_connected()) then
+      screens.lgtv_is_connected()) then
 
     if lgtv_current_app_id() ~= APP_ID and PREVENT_SLEEP_WHEN_USING_OTHER_INPUT then
       return
