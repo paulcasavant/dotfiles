@@ -29,10 +29,9 @@
     * <kbd>Caps Lock</kbd> -> <kbd>Ctrl</kbd> (Caps Lock)  (Simple Modification)
     * <kbd>Tab</kbd> (Held) -> <kbd>Alt</kbd>
 * *IBM Model F AT* Compensation
-    * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>Home</kbd> -> <kbd>Cmd</kbd> + <kbd>Up Arrow</kbd>
-    * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>End</kbd> -> <kbd>Cmd</kbd> + <kbd>Down Arrow</kbd>
     * <kbd>Opt</kbd> + <kbd>C</kbd> -> <kbd>Cmd</kbd> + <kbd>C</kbd>
     * <kbd>Opt</kbd> + <kbd>V</kbd> -> <kbd>Cmd</kbd> + <kbd>V</kbd>
+    * <kbd>Opt</kbd> + <kbd>A</kbd> -> <kbd>Cmd</kbd> + <kbd>A</kbd>
     * <kbd>Shift</kbd> + <kbd>Esc</kbd> -> <kbd>~</kbd>
 * Psuedo-Vim
     * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>H</kbd> -> <kbd>Left Arrow</kbd>
@@ -59,28 +58,27 @@
 * <kbd>Alt</kbd> (Tab) + <kbd>Shift</kbd> + <kbd>F</kbd> -> Toggle float/bsp layout for space
 * <kbd>Alt</kbd> (Tab) + <kbd>Z</kbd> -> Toggle fullscreen zoom for the current window
 * <kbd>Alt</kbd> (Tab) + <kbd>R</kbd> -> Rotate the current space 270 degrees clockwise
-* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>H</kbd> -> Warp the window west
-* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>J</kbd> -> Warp the window south
-* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>K</kbd> -> Warp the window north
-* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>L</kbd> -> Warp the window east
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>H</kbd> -> Warp the window west
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>J</kbd> -> Warp the window south
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>K</kbd> -> Warp the window north
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>L</kbd> -> Warp the window east
 * <kbd>Alt</kbd> (Tab) + <kbd>S</kbd> -> Toggle horizontal/vertical split for the current window
 * <kbd>Alt</kbd> (Tab) + <kbd>Shift</kbd> + <kbd>H</kbd> -> Resize window to the left
 * <kbd>Alt</kbd> (Tab) + <kbd>Shift</kbd> + <kbd>J</kbd> -> Resize window downwards
 * <kbd>Alt</kbd> (Tab) + <kbd>Shift</kbd> + <kbd>K</kbd> -> Resize window upwards
 * <kbd>Alt</kbd> (Tab) + <kbd>Shift</kbd> + <kbd>L</kbd> -> Resize window to the right
 * <kbd>Alt</kbd> (Tab) + <kbd>M</kbd> -> Minimize window and store ID in /tmp
-* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>M</kbd> -> Unminimize the last minimized window
-* <kbd>Alt</kbd> (Tab) + <kbd>Shift</kbd> + <kbd>D</kbd> -> Minimize all windows in the current space
-* <kbd>Alt</kbd> (Tab) + <kbd>Shift</kbd> + <kbd>R</kbd> -> Unminimize all minimized windows in the current space
-* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>Y</kbd> -> Start/Stop Yabai using a custom script
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>M</kbd> -> Unminimize the last minimized window
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>D</kbd> -> Minimize all windows in the current space
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>R</kbd> -> Unminimize all minimized windows in the current space
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>Y</kbd> -> Start/Stop Yabai using a custom script
 * <kbd>Alt</kbd> (Tab) + <kbd>Y</kbd> -> Restart Yabai and SKHD services
-* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>S</kbd> -> Stack the current window on top of the next window
-* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>N</kbd> -> Focus the next stacked window
-* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>P</kbd> -> Focus the previous stacked window
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>S</kbd> -> Stack the current window on top of the next window
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>N</kbd> -> Focus the next stacked window
+* <kbd>Alt</kbd> (Tab) + <kbd>Ctrl</kbd> (Caps Lock) + <kbd>P</kbd> -> Focus the previous stacked window
 * <kbd>Alt</kbd> (Tab) + <kbd>N</kbd> -> Focus the next window
 * <kbd>Alt</kbd> (Tab) + <kbd>P</kbd> -> Focus the previous window
-
-* <kbd>Cmd</kbd> + <kbd>Return</kbd> -> Launch a terminal (Kitty)
+* <kbd>Cmd</kbd> + <kbd>Return</kbd> -> Launch a terminal
 * <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Return</kbd> -> Launch Firefox using a custom script
 
 ### Hammerspoon
@@ -98,9 +96,9 @@
 * <kbd>Hyper</kbd>  + <kbd>F2</kbd> -> Normalize Resolution with HDR Off
 * <kbd>Hyper</kbd> + <kbd>1</kbd> -> Set Audio Output to DAC, Input to Webcam
 * <kbd>Hyper</kbd> + <kbd>2</kbd> -> Set Audio Output to Speaker, Input to Webcam
-* <kbd>Hyper</kbd> + <kbd>1</kbd> -> Switch TV Input to to PC
-* <kbd>Hyper</kbd> + <kbd>2</kbd> -> Switch TV Input to Laptop
-* <kbd>Ctrl</kbd> + <kbd>Tab</kbd> -> Toggle Fn Keys
+* <kbd>Hyper</kbd> + <kbd>P</kbd> -> Switch TV Input to to PC
+* <kbd>Hyper</kbd> + <kbd>L</kbd> -> Switch TV Input to Laptop
+* <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> -> Toggle Fn Keys
 
 ### BetterTouchTool
 * <kbd>Alt</kbd> (Tab) + <kbd>1</kbd> -> Switch to Desktop 1
@@ -134,6 +132,7 @@ Layout: 84-key AT
 ```
 
 #### Layer 0
+
 * <kbd>Sys Req></kbd> -> <kbd>MO(1)</kbd> (Momentary Switch Layer 1)
 * <kbd>Num Lock</kbd> -> <kbd>TG(1)</kbd> (Toggle Layer 1)
 * <kbd>Caps Lock</kbd> -> <kbd>Super</kbd>
@@ -153,6 +152,7 @@ Layout: 84-key AT
 * <kbd>Num Pad 9</kbd> -> <kbd>Page Up</kbd>
 
 #### Layer 1
+
 * <kbd>Enter</kbd> -> <kbd>Media Play/Pause</kbd>
 * <kbd>Space</kbd> -> <kbd>Media Play/Pause</kbd>
 * <kbd>Caps Lock</kbd> -> <kbd>Media Previous</kbd>
@@ -184,6 +184,5 @@ Layout: 84-key AT
 * <kbd>.</kbd> -> **M8** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> -> Set Audio Output to Speaker, Input to Webcam
 * <kbd>.</kbd> -> **M9** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> -> Restart TV
 * <kbd>/</kbd> -> **M10** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Esc</kbd> -> TV Off
-* <kbd>.</kbd> -> **M11** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>A</kbd> -> Switch TV Input to PC
-* <kbd>/</kbd> -> **M12** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>D</kbd> -> Switch TV Input to Laptop
-* <kbd>/</kbd> -> **M13** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Tab</kbd> -> Toggle Fn Keys
+* <kbd>P</kbd> -> **M12** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>A</kbd> -> Switch TV Input to PC
+* <kbd>L</kbd> -> **M11** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>D</kbd> -> Switch TV Input to Laptop

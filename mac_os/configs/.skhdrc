@@ -166,10 +166,10 @@ alt - m : yabai -m query --windows --window | jq '.id' >> /tmp/minimized_windows
 alt + ctrl - m : LAST_WINDOW=$(tail -n 1 /tmp/minimized_windows) && sed -i '' '$d' /tmp/minimized_windows && yabai -m window --focus $LAST_WINDOW && yabai -m window --minimize off
 
 # Minimize all windows in the space
-alt + shift - d : yabai -m query --windows --space | jq '.[].id' | xargs -I{} yabai -m window {} --minimize
+alt + ctrl - d : yabai -m query --windows --space | jq '.[].id' | xargs -I{} yabai -m window {} --minimize
 
 # Unminimize all windows in the space
-alt + shift - r : yabai -m query --windows --space | jq 'map(select(."is-minimized" == true)) | .[].id' | xargs -I{} yabai -m window {} --focus
+alt + ctrl - r : yabai -m query --windows --space | jq 'map(select(."is-minimized" == true)) | .[].id' | xargs -I{} yabai -m window {} --focus
 
 # =====================
 # Application Launching

@@ -133,26 +133,27 @@ end)
 ----------------------------------------------------------------------------------------------------
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- Hyper+A -> Switch TV Input to Laptop
+-- Hyper+L -> Switch TV Input to Laptop
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-hs.hotkey.bind(hyper, "d", function()
+hs.hotkey.bind(hyper, "l", function()
+  print(config.LAPTOP_TV_INPUT)
   hs.execute(string.format("%s on; %s setInput %s", config.LGTV_PATH, config.LGTV_PATH, config.LAPTOP_TV_INPUT))
 end)
 ----------------------------------------------------------------------------------------------------
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- Hyper+D -> Switch TV Input to PC
+-- Hyper+P -> Switch TV Input to PC
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-hs.hotkey.bind(hyper, "a", function()
+hs.hotkey.bind(hyper, "p", function()
+  print(config.PC_TV_INPUT)
   hs.execute(string.format("%s on; %s setInput %s", config.LGTV_PATH, config.LGTV_PATH, config.PC_TV_INPUT))
-  hs.alert.show("Switch to PC")
 end)
 ----------------------------------------------------------------------------------------------------
 
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- Hyper+Tab -> Toggle Fn Keys
+-- Hyper+F -> Toggle Fn Keys
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-hs.hotkey.bind("ctrl", "tab", function()
+hs.hotkey.bind({"ctrl", "shift"}, "f", function()
   hs.execute(string.format("osascript %s/hammerspoon/toggle_func_keys.scpt", config.SCRIPT_PATH))
   hs.alert.show("Toggle Fn")
 end)
