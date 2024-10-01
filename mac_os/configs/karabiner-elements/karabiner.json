@@ -188,7 +188,7 @@
                         ]
                     },
                     {
-                        "description": "Opt+C to Cmd+C and Opt+V to Cmd+V",
+                        "description": "Opt+C to Cmd+C, Opt+V to Cmd+V, and Opt+A to Cmd+A",
                         "manipulators": [
                             {
                                 "from": {
@@ -217,6 +217,22 @@
                                 "to": [
                                     {
                                         "key_code": "v",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": ["option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
                                         "modifiers": ["command"]
                                     }
                                 ],
