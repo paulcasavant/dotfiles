@@ -5,6 +5,7 @@
   2. Populate `config.lua` with configuration info
   3. Reload *Hammerspoon*
 * Run the environment setup script: `source $HOME/repos/dotfiles/mac_os/scripts/setup.sh`
+* Execute script to move the Karabiner Elements configuration file: `$CONFIG_PATH/karabiner-elements/sync_karabiner.sh`
 
 ## Settings
   * Enable key-repeating: `defaults write -g ApplePressAndHoldEnabled -bool false`
