@@ -7,6 +7,33 @@
 * <kbd>Ctrl</kbd> + <kbd>Home</kbd> -> <kbd>Cmd</kbd> + <kbd>Up Arrow</kbd>
 * <kbd>Ctrl</kbd> + <kbd>End</kbd> -> <kbd>Cmd</kbd> + <kbd>Down Arrow</kbd>
 
+## Windows
+
+### Logitech G HUB
+* DPI Speed: 2000
+* <kbd>Thumb Button</kbd> -> <kbd>GSHIFT</kbd>
+    * <kbd>Middle Click</kbd> -> <kbd>Media Play/Pause</kbd>
+    * <kbd>Scroll Wheel Up</kbd> -> <kbd>Volume Increment</kbd>
+    * <kbd>Scroll Wheel Down</kbd> -> <kbd>Volume Decrement</kbd>
+    * <kbd>G8</kbd> -> <kbd>Next Track</kbd>
+    * <kbd>G7</kbd> -> <kbd>Previous Track</kbd>
+* <kbd>G9</kbd> -> Open Task View
+* <kbd>G7</kbd> -> <kbd>Win</kbd> + <kbd>Ctrl</kbd> + <kbd>Left</kbd> (Left Desktop)
+* <kbd>G8</kbd> -> <kbd>Win</kbd> + <kbd>Ctrl</kbd> + <kbd>Right</kbd> (Right Desktop)
+
+### AutoHotKey
+* Modifiers
+    * <kbd>Caps Lock</kbd> -> <kbd>Ctrl</kbd>
+* Psuedo-Vim
+    * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>H</kbd> -> <kbd>Left Arrow</kbd>
+    * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>J</kbd> -> <kbd>Down Arrow</kbd>
+    * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>K</kbd> -> <kbd>Up Arrow</kbd>
+    * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>L</kbd> -> <kbd>Right Arrow</kbd>
+    * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>P</kbd> -> <kbd>Home</kbd>
+    * <kbd>Ctrl</kbd> (Caps Lock)  + <kbd>;</kbd> -> <kbd>End</kbd>
+* <kbd>Cmd</kbd> + <kbd>Return</kbd> -> Launch a terminal
+* <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Return</kbd> -> Launch Firefox using a custom script
+
 ## macOS
 
 ### Logitech G HUB
@@ -178,10 +205,12 @@ Layout: 84-key AT
 * <kbd>,</kbd> -> **M2** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>,</kbd> -> Decrement Brightness
 * <kbd>.</kbd> -> **M3** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>.</kbd> -> Increment Brightness
 * <kbd>/</kbd> -> **M4** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>/</kbd> -> High Brightness
-* <kbd>F1</kbd> -> **M5** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F1</kbd> -> Normalize Resolution with HDR On
-* <kbd>F2</kbd> -> **M6** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F2</kbd> -> Normalize Resolution with HDR Off
+* <kbd>F1</kbd> -> **M5** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F1</kbd> -> Normalize Resolution with HDR On (Desk)
+* <kbd>F2</kbd> -> **M6** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F2</kbd> -> Normalize Resolution with HDR Off (Desk)
 * <kbd>,</kbd> -> **M7** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> -> Set Audio Output to DAC, Input to Webcam
 * <kbd>.</kbd> -> **M8** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> -> Set Audio Output to Speaker, Input to Webcam
+* <kbd>,</kbd> -> **M7** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>3</kbd> -> Set Audio Output to Arctis Media, Input to Arctis Mic
+* <kbd>.</kbd> -> **M8** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>4</kbd> -> Set Audio Output to Arctis Gaming, Input to Arctis Mic
 * <kbd>.</kbd> -> **M9** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> -> Restart TV
 * <kbd>/</kbd> -> **M10** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Esc</kbd> -> TV Off
 * <kbd>P</kbd> -> **M12** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>A</kbd> -> Switch TV Input to PC
