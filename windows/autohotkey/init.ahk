@@ -9,18 +9,17 @@ CapsLock::Ctrl
 ^k::Send("{Up}")
 ^l::Send("{Right}")
 
-; Ctrl+P -> Home
-^p::Send("{Home}")
-
-; Ctrl+; -> End
-^`;::Send("{End}")
-
-; Alt+C/A/V/P/X -> Ctrl+C/A/V/P/X
+; Alt+C/A/V/X -> Ctrl+C/A/V/X
 !c::Send("^c")
 !a::Send("^a")
 !v::Send("^v")
-!p::Send("^p")
 !x::Send("^x")
+
+; Ctrl+Volume Down -> Set Sonos Relative Volume -1 
+^Volume_Down::Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" relative_volume -1",,"Hide"
+
+; Ctrl+Volume Up -> Set Sonos Relative Volume +1 
+^Volume_Up::Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" relative_volume +1",,"Hide"
 
 ; Menu+Volume Down -> Set Sonos Relative Volume -1 
 F13::Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" relative_volume -1",,"Hide"
@@ -28,61 +27,56 @@ F13::Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" relative
 ; Menu+Volume Up -> Set Sonos Relative Volume +1 
 F14::Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" relative_volume +1",,"Hide"
 
-; Menu+RE Press -> Switch TV audio to TV
-F15::Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
-
-; Menu+P -> Switch TV input to PC
+; Hyper+P -> Switch TV Video Input to PC, Switch Audio to TV
 #^!P::{
   Run A_ComSpec " /c `"C:\Program Files\LGTV Companion\LGTVcli.exe`" -poweron",,"Hide"
   Run A_ComSpec " /c `"C:\Program Files\LGTV Companion\LGTVcli.exe`" -sethdmi4",,"Hide"
+  Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
 }
 
-; Menu+L -> Switch TV input to Laptop
+; Hyper+L -> Switch TV Video Input to Laptop, Switch Audio to TV
 #^!L::
 {
   Run A_ComSpec " /c `"C:\Program Files\LGTV Companion\LGTVcli.exe`" -poweron",,"Hide"
   Run A_ComSpec " /c `"C:\Program Files\LGTV Companion\LGTVcli.exe`" -sethdmi3",,"Hide"
+  Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
 }
 
-; Menu+F1 -> Switch to Desk Mode (125% scaling) with HDR
+; Hyper+F1 -> Normalize Resolution with HDR On
 #^!F1::
 {
   Run A_ComSpec " /c taskkill /IM Telegram.exe /F",,"Hide"
   Run A_ComSpec " /c `"C:\Program Files\DisplayFusion\DisplayFusionCommand.exe`" -monitorloadprofile Desk",,"Hide"
-  ;Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
   Sleep 2000
   Run A_ComSpec " /c C:\repos\windows-control\hdr.exe on",,"Hide"
   Run A_ComSpec " /c `"$HOME\AppData\Roaming\Telegram Desktop\Telegram.exe`" -scale 135 -startintray",,"Hide"
 }
 
-; Menu+F2 -> Switch Display to Desk Mode (125% scaling) without HDR
+; Hyper+F2 -> Normalize Resolution with HDR Off
 #^!F2::
 {
   Run A_ComSpec " /c taskkill /IM Telegram.exe /F",,"Hide"
   Run A_ComSpec " /c `"C:\Program Files\DisplayFusion\DisplayFusionCommand.exe`" -monitorloadprofile Desk",,"Hide"
-  ;Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
   Sleep 2000
   Run A_ComSpec " /c C:\repos\windows-control\hdr.exe off",,"Hide"
   Run A_ComSpec " /c `"$HOME\AppData\Roaming\Telegram Desktop\Telegram.exe`" -scale 135 -startintray",,"Hide"
 }
 
-; Menu+F3 -> Switch Display to Recliner Mode (175% scaling) with HDR
+; Hyper+F3 -> Normalize Resolution (Zoomed) with HDR On
 #^!F3::
 {
   Run A_ComSpec " /c taskkill /IM Telegram.exe /F",,"Hide"
   Run A_ComSpec " /c `"C:\Program Files\DisplayFusion\DisplayFusionCommand.exe`" -monitorloadprofile Recliner",,"Hide"
-  ;Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
   Sleep 2000
   Run A_ComSpec " /c C:\repos\windows-control\hdr.exe on",,"Hide"
   Run A_ComSpec " /c `"$HOME\AppData\Roaming\Telegram Desktop\Telegram.exe`" -scale 85 -startintray",,"Hide"
 }
 
-; Menu+F4 -> Switch Display to Recliner Mode (175% scaling) without HDR
+; Hyper+F4 -> Normalize Resolution (Zoomed) with HDR Off
 #^!F4::
 {
   Run A_ComSpec " /c taskkill /IM Telegram.exe /F",,"Hide"
   Run A_ComSpec " /c `"C:\Program Files\DisplayFusion\DisplayFusionCommand.exe`" -monitorloadprofile Recliner",,"Hide"
-  ;Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
   Sleep 2000
   Run A_ComSpec " /c C:\repos\windows-control\hdr.exe off",,"Hide"
   Run A_ComSpec " /c `"$HOME\AppData\Roaming\Telegram Desktop\Telegram.exe`" -scale 85 -startintray",,"Hide"
@@ -114,14 +108,14 @@ F15::Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_t
   Run A_ComSpec " /c `"C:\Program Files\LGTV Companion\LGTVcli.exe`" -backlight 25",,"Hide"
 }
 
-; Menu+1 -> Switch audio to DAC Headphones
+; Menu+1 -> Set audio to DAC Headphones
 #^!1::
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python c:\repos\windows-control\get_audio_id.py -t dac)",,"Hide" ; DAC
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python c:\repos\windows-control\get_audio_id.py -t mic)",,"Hide" ; Sennheiser mic
 }
 
-; Menu+2 -> Switch audio to Speakers
+; Menu+2 -> Set audio to Speakers
 #^!2::
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python c:\repos\windows-control\get_audio_id.py -t sonos)",,"Hide" ; TV
@@ -129,14 +123,14 @@ F15::Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_t
   Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
 }
 
-; Menu+3 -> Switch audio to Steelseries Arctis Nova Pro (Media)
+; Menu+3 -> Set audio to Steelseries Arctis Nova Pro (Media)
 #^!3::
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python c:\repos\windows-control\get_audio_id.py -t arctis_media)",,"Hide" ; Media
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python c:\repos\windows-control\get_audio_id.py -t arctis_mic)",,"Hide" ; Chat
 }
 
-; Menu+4 -> Switch audio to Steelseries Arctis Nova Pro (Gaming)
+; Menu+4 -> Set audio to Steelseries Arctis Nova Pro (Gaming)
 #^!4::
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python c:\repos\windows-control\get_audio_id.py -t arctis_gaming)",,"Hide" ; Gaming
@@ -155,4 +149,18 @@ F15::Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_t
 #^!esc::
 {
   Run A_ComSpec " /c `"C:\Program Files\LGTV Companion\LGTVcli.exe`" -poweroff",,"Hide"
+}
+
+; Super + Shift + Enter opens Firefox
+#+Enter::
+{
+    Run("firefox.exe")  ; Launch Firefox
+    return
+}
+
+; Super + Enter opens Windows Terminal
+#Enter::
+{
+    Run("wt.exe")  ; Launch Windows Terminal
+    return
 }
