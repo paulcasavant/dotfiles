@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Install Python dependencies
+pip install wakeonlan bscpylgtv
+
 # Function to create a symlink if it doesn't exist
 create_symlink() {
     local target=$1
