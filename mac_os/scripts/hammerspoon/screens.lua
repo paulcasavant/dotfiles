@@ -150,6 +150,8 @@ function screens.HandleSleepChange(eventType)
       screens.lgtv_exec_command("on") -- WOL IP address
       screens.lgtv_exec_command("screenOn") -- turn on screen
       screens.lgtv_log_d("TV was turned on")
+      hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_device_info ".. config.LAPTOP_TV_INPUT .. " pc PC")
+      hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_current_picture_mode hdrStandard")
 
       if lgtv_current_app_id() ~= APP_ID and SWTICH_INPUT_ON_WAKE then
         screens.lgtv_exec_command("startApp "..APP_ID)
