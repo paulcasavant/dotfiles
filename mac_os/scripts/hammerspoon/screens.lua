@@ -145,7 +145,7 @@ function screens.HandleSleepChange(eventType)
       eventType == hs.caffeinate.watcher.systemDidWake or
       eventType == hs.caffeinate.watcher.screensDidUnlock) then
     if screens.lgtv_is_connected() then
-      common.Sleep(2)
+      -- common.Sleep(2)
       hs.execute(string.format("%s -c \"import wakeonlan; wakeonlan.send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
       screens.lgtv_exec_command("on") -- WOL IP address
       screens.lgtv_exec_command("screenOn") -- turn on screen
