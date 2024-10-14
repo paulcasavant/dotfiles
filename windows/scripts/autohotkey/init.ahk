@@ -2,8 +2,11 @@
 
 #Include config.ahk
 
+; Switch input to PC on startup
+Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" PC_HDMI_NUMBER,,"Hide"
+
 ; Function to monitor the keyboard connection and switch HDMI inputs based on its state
-CheckKeyboardDevice(DeviceID, LGTV_CLI_PATH) {
+WatchKeyboardSetHDMI(DeviceID, LGTV_CLI_PATH) {
     ; Declare prevState as static to remember the last known state between loop iterations
     static prevState := ""
 
@@ -31,22 +34,22 @@ CheckKeyboardDevice(DeviceID, LGTV_CLI_PATH) {
 
             ; If the keyboard is connected, switch to HDMI 3, otherwise switch to HDMI 4
             if (isConnected = 1) {
-                Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi3",,"Hide"
+                Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" PC_HDMI_NUMBER,,"Hide"
             } else {
-                Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi4",,"Hide"
+                Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" LAPTOP_HDMI_NUMBER,,"Hide"
             }
         }
 
         ; Delete the temporary file to clean up
         FileDelete(tempFile)
 
-        ; Wait for 2 seconds before checking again
+        ; Wait for 1 seconds before checking again
         Sleep 1000
     }
 }
 
 ; Call the function to start monitoring the keyboard connection and manage HDMI switching
-CheckKeyboardDevice(KeyboardID, LGTV_CLI_PATH)
+WatchKeyboardSetHDMI(KEYBOARD_ID, LGTV_CLI_PATH)
 
 ; CapsLock -> Ctrl
 CapsLock::Ctrl
@@ -74,21 +77,6 @@ F13::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume -1",,
 
 ; Menu+Volume Up -> Set Sonos Relative Volume +1 
 F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,"Hide"
-
-; Hyper+P -> Switch TV Video Input to PC, Switch Audio to TV
-#^!P::{
-  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
-  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi4",,"Hide"
-  Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" switch_to_tv",,"Hide"
-}
-
-; Hyper+L -> Switch TV Video Input to Laptop, Switch Audio to TV
-#^!L::
-{
-  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
-  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi3",,"Hide"
-  Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" switch_to_tv",,"Hide"
-}
 
 ; Hyper+F1 -> Normalize Resolution with HDR On
 #^!F1::

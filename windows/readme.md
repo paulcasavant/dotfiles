@@ -1,4 +1,34 @@
-## Programs
+# Windows
+
+## Setup
+
+* Install DisplayFusion from Steam
+* Install: [LGTV Companion](https://github.com/JPersson77/LGTVCompanion)
+* Install [AutoHotKey v2.0](https://www.autohotkey.com/)
+* Install [Soco-CLI](https://github.com/avantrec/soco-cli): `pip install soco-cli`
+* Install [AudioDeviceCmdlets](https://github.com/frgnca/AudioDeviceCmdlets)
+   1. PowerShell (Administrator): `Install-Module -Name AudioDeviceCmdlets`
+   2. Capture device IDs using `Get-AudioDevice -List`
+* Configure [homebridge-wake-on-lan](https://github.com/paulcasavant/homebridge-wake-on-lan)
+* Compile HDR Toggle:
+   1. Install MSYS2/UCRT64
+      * Open console, and run `pacman -Sy`
+      * Install GCC: `pacman -S mingw-w64-x86_64-gcc`
+      * Install GDB: `pacman -S mingw-w64-x86_64-gdb`
+      * Add C:\msys64\mingw64\bin to PATH in System Variables
+   2. From PowerShell, run `g++ -o hdr.exe hdr.cpp hdr.h`
+* Configure *Task Scheduler* to run `init.ahk` on Startup
+    1. Start Task Scheduler, and click *Create Task…* in the *Actions* pane.
+    2. Name the task *Start AHK*
+    3. Select *Run only when user is logged on* under *Security Options*
+    4. Go to the *Triggers* tab, select *New...*
+        * Set *Begin the task* to *At log on*
+        * Click *OK* 
+    5. Go to the *Actions* tab, select *New...*, and set *Action* to *Start a program*
+    6. Set *Program/script* to `"C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe"`
+    7. Set *Add arguments* to `%SCRIPT_PATH%\windows\scripts\autohotkey\init.ahk`
+
+## Applications
 
 * [Google Chrome](https://www.google.com/chrome/)
 * [Firefox](https://www.mozilla.org/firefox/)

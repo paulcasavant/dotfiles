@@ -1,4 +1,5 @@
 # macOS
+
 ## Setup
 * Add configuration info to Hammerspoon `config.lua`
   1. `cp $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua.template $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua`

@@ -8,4 +8,6 @@ DISPLAY_FUSION_PATH := "C:\Program Files\DisplayFusion\DisplayFusionCommand.exe"
 HDR_PATH := "C:\repos\windows-control\hdr.exe"
 SET_BRIGHTNESS_SCRIPT_PATH := DOTFILES_PATH . "windows\scripts\autohotkey\set_brightness.py"
 GET_AUDIO_DEV_SCRIPT := DOTFILES_PATH . "windows\scripts\autohotkey\get_audio_id.py"
-KeyboardID := "VID_XXXXXXXX_XXXXXXX_XXXXXXXX"
+KEYBOARD_ID := "VID_XXXXXXXX_XXXXXXX_XXXXXXXX"
+PC_HDMI_NUMBER := 3
+LAPTOP_HDMI_NUMBER := 4
