@@ -1,5 +1,6 @@
 .DS_Store
 macOS/.DS_Store
 mac_os/configs/nvim/plugin/
-config.lua
-*.exe
+**/config.lua
+**/config.ahk
+**/*.exe

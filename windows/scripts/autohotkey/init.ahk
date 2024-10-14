@@ -2,6 +2,52 @@
 
 #Include config.ahk
 
+; Function to monitor the keyboard connection and switch HDMI inputs based on its state
+CheckKeyboardDevice(DeviceID, LGTV_CLI_PATH) {
+    ; Declare prevState as static to remember the last known state between loop iterations
+    static prevState := ""
+
+    ; Loop to continuously check the keyboard's connection status
+    Loop {
+        ; Create a temporary file to store the output from the PowerShell command
+        tempFile := A_Temp "\connected_keyboards.txt"
+
+        ; PowerShell command to query connected keyboards using WMI and redirect the output to the temporary file
+        psCommand := "powershell -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -Command `"Get-WmiObject -Query 'SELECT DeviceID FROM Win32_Keyboard'`" > " tempFile
+
+        ; Run the PowerShell command and wait for it to finish, hiding the window
+        RunWait(psCommand,, "Hide")
+
+        ; Read the output from the temporary file, which contains the list of connected keyboards
+        output := FileRead(tempFile)
+
+        ; Check if the specific device is connected by searching for its DeviceID in the output
+        isConnected := InStr(output, DeviceID) ? 1 : 0
+
+        ; If the connection state has changed, switch HDMI inputs accordingly
+        if (isConnected != prevState) {
+            ; Update the previous state to the current state
+            prevState := isConnected
+
+            ; If the keyboard is connected, switch to HDMI 3, otherwise switch to HDMI 4
+            if (isConnected = 1) {
+                Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi3",,"Hide"
+            } else {
+                Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi4",,"Hide"
+            }
+        }
+
+        ; Delete the temporary file to clean up
+        FileDelete(tempFile)
+
+        ; Wait for 2 seconds before checking again
+        Sleep 1000
+    }
+}
+
+; Call the function to start monitoring the keyboard connection and manage HDMI switching
+CheckKeyboardDevice(KeyboardID, LGTV_CLI_PATH)
+
 ; CapsLock -> Ctrl
 CapsLock::Ctrl
 
