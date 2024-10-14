@@ -1,4 +1,3 @@
-
 #Requires AutoHotkey v2.0
 
 DOTFILES_PATH := "C:\repos\dotfiles\"
