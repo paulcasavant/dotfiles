@@ -68,6 +68,7 @@
   * Set resolution to 2304x1296 and enable HDR
   * Disable volume control (conflict with Hammerspoon): Settings > Keyboard > Disable *Listen to native audio keys*
   * Settings > LG TV SSCR2 > Video Control Settings > Enable *Dim display brightness on screen saver or lock* and set to *50%*
+  * Displays > General Settings > Additional settings > Enable *Reinitialize this display on wake*
 * [Hammerspoon](https://github.com/Hammerspoon/hammerspoon/releases/)
   1. `pip install wakeonlan`
   2. Edit `scripts/config.lua` and update the configuration variables

@@ -16,6 +16,8 @@ if screens.lgtv_is_connected() then
   screens.lgtv_exec_command("on")
   screens.lgtv_exec_command("screenOn")
   hs.execute(string.format("%s on; %s setInput %s", config.LGTV_PATH, config.LGTV_PATH, config.LAPTOP_TV_INPUT))
+  hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_device_info ".. config.LAPTOP_TV_INPUT .. " pc PC")
+  hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_current_picture_mode hdrStandard")
   screens.normalize_menu_bar_and_dock()
 end
 
