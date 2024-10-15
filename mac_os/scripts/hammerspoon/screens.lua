@@ -4,10 +4,8 @@ local config = require('config')
 
 -- SETTINGS
 local SWTICH_INPUT_ON_WAKE = true -- Switch input to Mac when waking the TV
-local PREVENT_SLEEP_WHEN_USING_OTHER_INPUT = true -- Prevent sleep when TV is set to other input (ie: you're watching Netflix and your Mac goes to sleep)
 local DEBUG = false  -- If you run into issues, set to true to enable debug messages
 
-local SCREEN_OFF_COMMAND = "off" -- use "screenOff" to keep the TV on, but turn off the screen.
 local LGTV_CMD = config.LGTV_PATH.." --ssl --name "..config.TV_NAME
 local LAPTOP_INPUT_APP_ID = "com.webos.app." .. config.LAPTOP_TV_INPUT:lower():gsub("_", "")
 local PC_INPUT_APP_ID = "com.webos.app." .. config.PC_TV_INPUT:lower():gsub("_", "")
@@ -174,8 +172,8 @@ function screens.HandleSleepChange(eventType)
       screens.lgtv_exec_command("on") -- WOL IP address
       screens.lgtv_exec_command("screenOn") -- turn on screen
       screens.lgtv_log_d("TV was turned on")
-      hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_device_info ".. config.LAPTOP_TV_INPUT .. " pc PC")
-      hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_current_picture_mode hdrStandard")
+      -- hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_device_info ".. config.LAPTOP_TV_INPUT .. " pc PC")
+      -- hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_current_picture_mode hdrStandard")
 
       if lgtv_current_app_id() ~= LAPTOP_INPUT_APP_ID and SWTICH_INPUT_ON_WAKE then
         screens.lgtv_exec_command("startApp " .. LAPTOP_INPUT_APP_ID)
@@ -184,20 +182,6 @@ function screens.HandleSleepChange(eventType)
     -- screens.normalize_menu_bar_and_dock()
     end
   end
-
-  -- if ((eventType == hs.caffeinate.watcher.screensDidSleep or
-  --     eventType == hs.caffeinate.watcher.systemWillPowerOff) and
-  --     screens.lgtv_is_connected()) then
-
-  --   if lgtv_current_app_id() ~= LAPTOP_INPUT_APP_ID and PREVENT_SLEEP_WHEN_USING_OTHER_INPUT then
-  --     return
-  --   end
-
-  --   -- This puts the TV in standby mode.
-  --   -- For true "power off" use `off` instead of `screenOff`.
-  --   screens.lgtv_exec_command(SCREEN_OFF_COMMAND)
-  --   screens.lgtv_log_d("TV screen was turned off with command `"..SCREEN_OFF_COMMAND.."`.")
-  -- end
 end
 
 -- On Display Change if LGTV Connected -> Send Magic Packet + LGTV ON + LGTV SCREEN ON + LGTV SET INPUT
