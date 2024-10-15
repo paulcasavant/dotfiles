@@ -33,10 +33,10 @@ config.TV_NAME = ""
 config.TV_MAC_ADDR = ""
 
 -- Input to which your Mac is connected
-config.LAPTOP_TV_INPUT = "HDMI_3"
+config.LAPTOP_TV_INPUT = "HDMI_1"
 
 -- Input to which your PC is connected
-config.PC_TV_INPUT = "HDMI_4"
+config.PC_TV_INPUT = "HDMI_3"
 
 -- The manufacturer name of the keyboard to monitor for HDMI switching
 config.KEYBOARD_MANUFACTURER = "Lemokey"

@@ -12,6 +12,10 @@ local LGTV_CMD = config.LGTV_PATH.." --ssl --name "..config.TV_NAME
 local LAPTOP_INPUT_APP_ID = "com.webos.app." .. config.LAPTOP_TV_INPUT:lower():gsub("_", "")
 local PC_INPUT_APP_ID = "com.webos.app." .. config.PC_TV_INPUT:lower():gsub("_", "")
 
+-- Variable to store the previous keyboard connection state
+local previous_keyboard_state = nil
+
+-- Variable to store old TV connection state
 local old_lgtv_connected = nil
 
 function screens.lgtv_log_d(message)
@@ -94,18 +98,25 @@ function screens.lgtv_log_init()
   screens.lgtv_log_d("TV is connected? "..tostring(screens.lgtv_is_connected()))
 end
 
--- Function to switch HDMI input based on whether keyboard is connected
+-- Function to switch HDMI input based on whether the keyboard is connected
 function screens.watch_keyboard_set_hdmi()
     -- Execute the ioreg command and see if the keyboard manufacturer name is returned
     local output, status, _, _ = hs.execute("ioreg -p IOUSB -w0 | grep " .. config.KEYBOARD_MANUFACTURER)
 
-    -- Check the command output and switch input accordingly
-    if status and output ~= "" then
-        -- If there's any output, switch to laptop input
-        screens.lgtv_exec_command("startApp " .. LAPTOP_INPUT_APP_ID)
-    else
-        -- If there's no output, switch to PC input
-        screens.lgtv_exec_command("startApp " .. PC_INPUT_APP_ID)
+    -- Determine current state: true if the keyboard is connected, false otherwise
+    local current_keyboard_state = (status and output ~= "")
+
+    -- Only switch inputs if the state has changed
+    if current_keyboard_state ~= previous_keyboard_state then
+        if current_keyboard_state then
+            -- If there's any output, switch to laptop input
+            screens.lgtv_exec_command("startApp " .. LAPTOP_INPUT_APP_ID)
+        else
+            -- If there's no output, switch to PC input
+            screens.lgtv_exec_command("startApp " .. PC_INPUT_APP_ID)
+        end
+        -- Update the previous state to the current state
+        previous_keyboard_state = current_keyboard_state
     end
 end
 
@@ -174,19 +185,19 @@ function screens.HandleSleepChange(eventType)
     end
   end
 
-  if ((eventType == hs.caffeinate.watcher.screensDidSleep or
-      eventType == hs.caffeinate.watcher.systemWillPowerOff) and
-      screens.lgtv_is_connected()) then
+  -- if ((eventType == hs.caffeinate.watcher.screensDidSleep or
+  --     eventType == hs.caffeinate.watcher.systemWillPowerOff) and
+  --     screens.lgtv_is_connected()) then
 
-    if lgtv_current_app_id() ~= LAPTOP_INPUT_APP_ID and PREVENT_SLEEP_WHEN_USING_OTHER_INPUT then
-      return
-    end
+  --   if lgtv_current_app_id() ~= LAPTOP_INPUT_APP_ID and PREVENT_SLEEP_WHEN_USING_OTHER_INPUT then
+  --     return
+  --   end
 
-    -- This puts the TV in standby mode.
-    -- For true "power off" use `off` instead of `screenOff`.
-    screens.lgtv_exec_command(SCREEN_OFF_COMMAND)
-    screens.lgtv_log_d("TV screen was turned off with command `"..SCREEN_OFF_COMMAND.."`.")
-  end
+  --   -- This puts the TV in standby mode.
+  --   -- For true "power off" use `off` instead of `screenOff`.
+  --   screens.lgtv_exec_command(SCREEN_OFF_COMMAND)
+  --   screens.lgtv_log_d("TV screen was turned off with command `"..SCREEN_OFF_COMMAND.."`.")
+  -- end
 end
 
 -- On Display Change if LGTV Connected -> Send Magic Packet + LGTV ON + LGTV SCREEN ON + LGTV SET INPUT
