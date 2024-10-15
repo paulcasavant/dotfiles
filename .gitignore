@@ -4,3 +4,4 @@ mac_os/configs/nvim/plugin/
 **/config.lua
 **/config.ahk
 **/*.exe
+**/*.sqlite
