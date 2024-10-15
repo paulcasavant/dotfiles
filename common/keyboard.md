@@ -38,8 +38,6 @@
     * <kbd>Alt</kbd> + <kbd>X</kbd> -> <kbd>Super</kbd> + <kbd>C</kbd> (Cut)
 * <kbd>Menu</kbd> + <kbd>Volume Down</kbd> -> <kbd>F13</kbd> (Sonos Relative Volume Decrement)
 * <kbd>Menu</kbd> + <kbd>Volume Up</kbd> -> <kbd>F14</kbd> (Sonos Relative Volume Increment)
-* <kbd>Hyper</kbd> + <kbd>P</kbd> -> Switch TV Input to PC, Switch Audio to TV
-* <kbd>Hyper</kbd> + <kbd>L</kbd> -> Switch TV Input to Laptop, Switch Audio to TV
 * <kbd>Hyper</kbd> + <kbd>F1</kbd> -> Normalize Resolution with HDR On
 * <kbd>Hyper</kbd> + <kbd>F2</kbd> -> Normalize Resolution with HDR Off
 * <kbd>Hyper</kbd> + <kbd>F3</kbd> -> Normalize Resolution with HDR On (Zoomed) 
@@ -146,8 +144,6 @@
 * <kbd>Hyper</kbd>  + <kbd>F2</kbd> -> Normalize Resolution with HDR Off
 * <kbd>Hyper</kbd> + <kbd>1</kbd> -> Set Audio Output to DAC, Input to Webcam
 * <kbd>Hyper</kbd> + <kbd>2</kbd> -> Set Audio Output to Speaker, Input to Webcam
-* <kbd>Hyper</kbd> + <kbd>P</kbd> -> Switch TV Input to to PC
-* <kbd>Hyper</kbd> + <kbd>L</kbd> -> Switch TV Input to Laptop
 * <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> -> Toggle Fn Keys
 
 ### BetterTouchTool
@@ -236,8 +232,6 @@ Layout: 84-key AT
 * <kbd>4</kbd> -> **M8** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>4</kbd> -> Set Audio Output to Arctis Gaming, Input to Arctis Mic
 * <kbd>T</kbd> -> **M9** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> -> Restart TV
 * <kbd>Esc</kbd> -> **M10** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Esc</kbd> -> TV Off
-* <kbd>P</kbd> -> **M12** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>A</kbd> -> Switch TV Input to PC
-* <kbd>L</kbd> -> **M11** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>D</kbd> -> Switch TV Input to Laptop
 
 ## Keychron
 
@@ -257,8 +251,6 @@ Layout: 84-key AT
 
 * <kbd>Volume Down</kbd> -> <kbd>F13</kbd> (Sonos Relative Volume Decrement)
 * <kbd>Volume Up</kbd> -> <kbd>F14</kbd> (Sonos Relative Volume Increment)
-* <kbd>P</kbd> -> **M4** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> -> Switch TV Input to PC, Switch Audio to TV
-* <kbd>L</kbd> -> **M5** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd> -> Switch TV Input to Laptop, Switch Audio to TV
 * <kbd>F1</kbd> -> **M6** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F1</kbd> -> Normalize Resolution with HDR On
 * <kbd>F2</kbd> -> **M7** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F2</kbd> -> Normalize Resolution with HDR Off
 * <kbd>F3</kbd> -> **M8** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F3</kbd> -> Normalize Resolution with HDR On (Zoomed) 

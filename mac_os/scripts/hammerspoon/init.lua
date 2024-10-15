@@ -45,3 +45,6 @@ end)
 
 -- Start the caffeinate watcher
 caffeinate_key_watcher:start()
+
+-- Poll keyboard every 5s
+hs.timer.doEvery(2, screens.watch_keyboard_set_hdmi)

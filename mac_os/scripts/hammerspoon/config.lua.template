@@ -38,6 +38,9 @@ config.LAPTOP_TV_INPUT = "HDMI_3"
 -- Input to which your PC is connected
 config.PC_TV_INPUT = "HDMI_4"
 
+-- The manufacturer name of the keyboard to monitor for HDMI switching
+config.KEYBOARD_MANUFACTURER = "Lemokey"
+
 ------------------------------- PATHS --------------------------------
 -- Script directory
 config.SCRIPT_PATH = get_script_path()
