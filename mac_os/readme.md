@@ -1,6 +1,8 @@
 # macOS
 
 ## Setup
+
+* Set a static IP for TV
 * Add configuration info to Hammerspoon `config.lua`
   1. `cp $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua.template $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua`
   2. Populate `config.lua` with configuration info

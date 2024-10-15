@@ -2,8 +2,9 @@
 
 ## Setup
 
-* Install DisplayFusion from Steam
-* Install: [LGTV Companion](https://github.com/JPersson77/LGTVCompanion)
+* Set a static IP for TV
+* Install [LGTV Companion](https://github.com/JPersson77/LGTVCompanion)
+* Install [DisplayFusion](https://store.steampowered.com/app/227260/DisplayFusion/)
 * Install [AutoHotKey v2.0](https://www.autohotkey.com/)
 * Install [Soco-CLI](https://github.com/avantrec/soco-cli): `pip install soco-cli`
 * Install [AudioDeviceCmdlets](https://github.com/frgnca/AudioDeviceCmdlets)
