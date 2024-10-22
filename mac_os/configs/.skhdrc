@@ -210,3 +210,5 @@ alt + ctrl - p : yabai -m window --focus stack.prev || yabai -m window --focus s
 # Cycle through all windows with wraparound
 alt - n : yabai -m window --focus next || yabai -m window --focus first   # Focus the next window
 alt - p : yabai -m window --focus prev || yabai -m window --focus last    # Focus the previous window
+
+cmd - w : if pgrep -x "yabai" > /dev/null; then yabai -m window --close; yabai -m window --focus next || yabai -m window --focus prev || yabai -m window --focus first; else; hs -c "CloseCurrentWindow()"; fi
