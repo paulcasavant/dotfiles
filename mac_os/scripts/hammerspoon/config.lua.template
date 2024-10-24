@@ -26,20 +26,20 @@ config.DAC_NAME = ""
 -- Used to identify the TV when it's connected to this computer
 config.CONNECTED_TV_IDENTIFIERS = {"LG TV", "LG TV SSCR2"}
 
--- TV name configured with `~/bin/lgtv auth` or in `~/.lgtv/config.json`
-config.TV_NAME = ""
-
 -- MAC address
 config.TV_MAC_ADDR = ""
 
 -- Input to which your Mac is connected
-config.LAPTOP_TV_INPUT = "HDMI_1"
+config.LAPTOP_HDMI_NUM = "1"
 
 -- Input to which your PC is connected
-config.PC_TV_INPUT = "HDMI_3"
+config.PC_HDMI_NUM = "3"
 
 -- The manufacturer name of the keyboard to monitor for HDMI switching
 config.KEYBOARD_MANUFACTURER = "Lemokey"
+
+-- The hostname of the LGTV
+config.LGTV_HOST = "LGwebOSTV.local"
 
 ------------------------------- PATHS --------------------------------
 -- Script directory
@@ -51,7 +51,10 @@ config.PYTHON_PATH = ""
 -- Directory path
 config.BETTER_DISPLAY_FOLDER_PATH = "/Applications/BetterDisplay.app/Contents/MacOS/"
 
- -- Binary path
-config.LGTV_PATH = "~/bin/lgtv"
+------------------------------- OTHER --------------------------------
+config.PC_TV_INPUT = "HDMI_3"
+config.LAPTOP_TV_INPUT_ALT = "com.webos.app.hdmi" .. config.PC_HDMI_NUM
+config.LAPTOP_TV_INPUT = "HDMI_" .. config.LAPTOP_HDMI_NUM
+config.LAPTOP_TV_INPUT_ALT = "com.webos.app.hdmi" .. config.LAPTOP_HDMI_NUM
 
 return config

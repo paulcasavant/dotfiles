@@ -1,14 +1,11 @@
 local screens = {}
 
+local common = require('common')
 local config = require('config')
 
 -- SETTINGS
 local SWTICH_INPUT_ON_WAKE = true -- Switch input to Mac when waking the TV
 local DEBUG = false  -- If you run into issues, set to true to enable debug messages
-
-local LGTV_CMD = config.LGTV_PATH.." --ssl --name "..config.TV_NAME
-local LAPTOP_INPUT_APP_ID = "com.webos.app." .. config.LAPTOP_TV_INPUT:lower():gsub("_", "")
-local PC_INPUT_APP_ID = "com.webos.app." .. config.PC_TV_INPUT:lower():gsub("_", "")
 
 -- Variable to store the previous keyboard connection state
 local previous_keyboard_state = nil
@@ -53,10 +50,41 @@ function screens.lgtv_is_connected()
   return false
 end
 
-function screens.lgtv_exec_command(command)
-  command = LGTV_CMD.." "..command
-  screens.lgtv_log_d("Executing command: "..command)
-  return hs.execute(command)
+function screens.lgtv_off()
+  hs.execute(config.BSCPY_PATH .. " " .. config.LGTV_HOST .. " power_off")
+end
+
+function screens.lgtv_screen_off()
+  hs.execute(config.BSCPY_PATH .. " " .. config.LGTV_HOST .. " turn_screen_off")
+end
+
+function screens.lgtv_on()
+  hs.execute(string.format("%s -c \"import wakeonlan; wakeonlan.send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
+end
+
+function screens.lgtv_screen_on()
+  hs.execute(config.BSCPY_PATH .. " " .. config.LGTV_HOST .. " turn_screen_on")
+end
+
+function screens.lgtv_set_input_pc()
+  hs.execute(config.BSCPY_PATH .. " " .. config.LGTV_HOST .. " set_input " .. config.PC_TV_INPUT)
+end
+
+function screens.lgtv_set_input_laptop()
+  hs.execute(config.BSCPY_PATH .. " " .. config.LGTV_HOST .. " set_input " .. config.LAPTOP_TV_INPUT)
+end
+
+function screens.get_input()
+  local output, _, _, _ = hs.execute(config.BSCPY_PATH .. " " .. config.LGTV_HOST .. " get_input")
+  return output
+end
+
+function screens.lgtv_laptop_is_current_input()
+  return screens.get_input():match("^%s*(.-)%s*$") == config.LAPTOP_TV_INPUT_ALT:match("^%s*(.-)%s*$")
+end
+
+function screens.lgtv_pc_is_current_input()
+  return not screens.is_laptop_current_input()
 end
 
 function screens.lgtv_is_current_audio_device()
@@ -85,17 +113,6 @@ local function lgtv_current_app_id()
   end
 end
 
-function screens.lgtv_log_init()
-  screens.lgtv_log_d ("TV name: "..config.TV_NAME)
-  screens.lgtv_log_d ("TV input: "..config.LAPTOP_TV_INPUT)
-  screens.lgtv_log_d ("LGTV path: "..config.LGTV_PATH)
-  screens.lgtv_log_d ("LGTV command: "..LGTV_CMD)
-  screens.lgtv_log_d (screens.lgtv_exec_command("swInfo"))
-  screens.lgtv_log_d (screens.lgtv_exec_command("getForegroundAppInfo"))
-  screens.lgtv_log_d("Connected screens: "..screens.lgtv_dump_table(hs.screen.allScreens()))
-  screens.lgtv_log_d("TV is connected? "..tostring(screens.lgtv_is_connected()))
-end
-
 -- Function to switch HDMI input based on whether the keyboard is connected
 function screens.watch_keyboard_set_hdmi()
     -- Execute the ioreg command and see if the keyboard manufacturer name is returned
@@ -108,10 +125,10 @@ function screens.watch_keyboard_set_hdmi()
     if current_keyboard_state ~= previous_keyboard_state then
         if current_keyboard_state then
             -- If there's any output, switch to laptop input
-            screens.lgtv_exec_command("startApp " .. LAPTOP_INPUT_APP_ID)
+            screens.lgtv_set_input_laptop()
         else
             -- If there's no output, switch to PC input
-            screens.lgtv_exec_command("startApp " .. PC_INPUT_APP_ID)
+            screens.lgtv_set_input_pc()
         end
         -- Update the previous state to the current state
         previous_keyboard_state = current_keyboard_state
@@ -168,16 +185,14 @@ function screens.HandleSleepChange(eventType)
       eventType == hs.caffeinate.watcher.systemDidWake or
       eventType == hs.caffeinate.watcher.screensDidUnlock) then
     if screens.lgtv_is_connected() then
-      hs.execute(string.format("%s -c \"import wakeonlan; wakeonlan.send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
-      screens.lgtv_exec_command("on") -- WOL IP address
-      screens.lgtv_exec_command("screenOn") -- turn on screen
-      screens.lgtv_log_d("TV was turned on")
+      screens.lgtv_on()
+      screens.lgtv_screen_on()
       -- hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_device_info ".. config.LAPTOP_TV_INPUT .. " pc PC")
       -- hs.execute(config.BSCPY_PATH .. " LGwebOSTV.local set_current_picture_mode hdrStandard")
 
-      if lgtv_current_app_id() ~= LAPTOP_INPUT_APP_ID and SWTICH_INPUT_ON_WAKE then
-        screens.lgtv_exec_command("startApp " .. LAPTOP_INPUT_APP_ID)
-        screens.lgtv_log_d("TV input switched to " .. LAPTOP_INPUT_APP_ID)
+      common.Sleep(1) -- WARNING: Possible race condition!
+      if (not screens.lgtv_laptop_is_current_input()) and SWTICH_INPUT_ON_WAKE then
+        screens.lgtv_set_input_laptop()
       end
     -- screens.normalize_menu_bar_and_dock()
     end
@@ -194,10 +209,8 @@ function screens.HandleDisplayChange()
 
   if current_lgtv_connected ~= old_lgtv_connected then
     if current_lgtv_connected then
-      hs.execute(string.format("%s -c \"import wakeonlan; wakeonlan.send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
-      screens.lgtv_exec_command("on") -- WOL IP address
-      screens.lgtv_exec_command("screenOn") -- turn on screen
-      screens.lgtv_exec_command("setInput " .. config.LAPTOP_TV_INPUT)
+      screens.lgtv_on()
+      screens.lgtv_set_input_laptop()
       -- screens.normalize_menu_bar_and_dock()
     end
   end

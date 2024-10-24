@@ -39,9 +39,7 @@
   * Settings > Lock Screen > Set *Turn display off* settings to an appropriate timeout
   * Settings > Battery > Options... > Enable *Prevent automatic sleeping on power adapter when the display is off*
   * Manually test sleep mode using `pmset sleepnow` and `pmset displaysleepnow`
-  * Write TV to config file: `~/bin/lgtv auth <IP> "BedroomTV"` 
-  * Set TV as default: `~/bin/lgtv setDefault "BedroomTV"` 
-  * Test connection: `~/bin/lgtv off && sleep 2 && ~/bin/lgtv on` 
+  * Test connection: `/Library/Frameworks/Python.framework/Versions/3.12/bin/bscpylgtvcommand LGwebOSTV.local get_input` 
 * [Homebrew](https://brew.sh/)
 * [ShortcutDetective](https://www.irradiatedsoftware.com/labs/): `brew install --cask shortcutdetective`
 * [Obsidian](https://obsidian.md/)
