@@ -6,6 +6,7 @@ local config = require('config')
 local SWTICH_INPUT_ON_WAKE = true -- Switch input to Mac when waking the TV
 local DEBUG = false  -- If you run into issues, set to true to enable debug messages
 
+-- Warning: --SSL is required!
 local LGTV_CMD = config.LGTV_PATH.." --ssl --name "..config.TV_NAME
 local LAPTOP_INPUT_APP_ID = "com.webos.app." .. config.LAPTOP_TV_INPUT:lower():gsub("_", "")
 local PC_INPUT_APP_ID = "com.webos.app." .. config.PC_TV_INPUT:lower():gsub("_", "")
