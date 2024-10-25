@@ -12,7 +12,7 @@ screens.HandleDisplayChange()
 
 -- On Startup if LGTV Connected -> Send Magic Packet (MAC and IP), TV On, TV Screen On, Set TV Input + Normalize Menu Bar and Dock
 if screens.lgtv_is_connected() then
-  hs.execute(string.format("%s -c \"import wakeonlan; wakeonlan.send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR))
+  hs.execute(string.format("%s -c \"from wakeonlan import send_magic_packet; send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
   screens.lgtv_exec_command("on")
   screens.lgtv_exec_command("screenOn")
   hs.execute(string.format("%s on; %s setInput %s", config.LGTV_PATH, config.LGTV_PATH, config.LAPTOP_TV_INPUT))

@@ -169,7 +169,7 @@ function screens.HandleSleepChange(eventType)
       eventType == hs.caffeinate.watcher.systemDidWake or
       eventType == hs.caffeinate.watcher.screensDidUnlock) then
     if screens.lgtv_is_connected() then
-      hs.execute(string.format("%s -c \"import wakeonlan; wakeonlan.send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
+      hs.execute(string.format("%s -c \"from wakeonlan import send_magic_packet; send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
       screens.lgtv_exec_command("on") -- WOL IP address
       screens.lgtv_exec_command("screenOn") -- turn on screen
       screens.lgtv_log_d("TV was turned on")
@@ -195,7 +195,7 @@ function screens.HandleDisplayChange()
 
   if current_lgtv_connected ~= old_lgtv_connected then
     if current_lgtv_connected then
-      hs.execute(string.format("%s -c \"import wakeonlan; wakeonlan.send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
+      hs.execute(string.format("%s -c \"from wakeonlan import send_magic_packet; send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
       screens.lgtv_exec_command("on") -- WOL IP address
       screens.lgtv_exec_command("screenOn") -- turn on screen
       screens.lgtv_exec_command("setInput " .. config.LAPTOP_TV_INPUT)
