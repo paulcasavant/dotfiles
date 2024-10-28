@@ -93,41 +93,41 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,
   Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" switch_to_tv",,"Hide"
 }
 
-; Hyper+F1 -> Normalize Resolution with HDR On
+; Hyper+F1 -> Normal Resolution with HDR On
 #^!F1::
 {
   Run A_ComSpec " /c taskkill /IM Telegram.exe /F",,"Hide"
-  Run A_ComSpec " /c `"" DISPLAY_FUSION_PATH "`" -monitorloadprofile Desk",,"Hide"
+  Run A_ComSpec " /c `"" DISPLAY_FUSION_PATH "`" -monitorloadprofile Normal",,"Hide"
   Sleep 2000
   Run A_ComSpec " /c " HDR_PATH " on",,"Hide"
   Run A_ComSpec " /c `"" TELEGRAM_PATH "`" -scale 135 -startintray",,"Hide"
 }
 
-; Hyper+F2 -> Normalize Resolution with HDR Off
+; Hyper+F2 -> Normal Resolution with HDR Off
 #^!F2::
 {
   Run A_ComSpec " /c taskkill /IM Telegram.exe /F",,"Hide"
-  Run A_ComSpec " /c `"" DISPLAY_FUSION_PATH "`" -monitorloadprofile Desk",,"Hide"
+  Run A_ComSpec " /c `"" DISPLAY_FUSION_PATH "`" -monitorloadprofile Normal",,"Hide"
   Sleep 2000
   Run A_ComSpec " /c " HDR_PATH " off",,"Hide"
   Run A_ComSpec " /c `"" TELEGRAM_PATH "`" -scale 135 -startintray",,"Hide"
 }
 
-; Hyper+F3 -> Normalize Resolution (Zoomed) with HDR On
+; Hyper+F3 -> Zoomed Resolution with HDR On
 #^!F3::
 {
   Run A_ComSpec " /c taskkill /IM Telegram.exe /F",,"Hide"
-  Run A_ComSpec " /c `"" DISPLAY_FUSION_PATH "`" -monitorloadprofile Recliner",,"Hide"
+  Run A_ComSpec " /c `"" DISPLAY_FUSION_PATH "`" -monitorloadprofile Zoomed",,"Hide"
   Sleep 2000
   Run A_ComSpec " /c " HDR_PATH " on",,"Hide"
   Run A_ComSpec " /c `"" TELEGRAM_PATH "`" -scale 85 -startintray",,"Hide"
 }
 
-; Hyper+F4 -> Normalize Resolution (Zoomed) with HDR Off
+; Hyper+F4 -> Zoomed Resolution with HDR Off
 #^!F4::
 {
   Run A_ComSpec " /c taskkill /IM Telegram.exe /F",,"Hide"
-  Run A_ComSpec " /c `"" DISPLAY_FUSION_PATH "`" -monitorloadprofile Recliner",,"Hide"
+  Run A_ComSpec " /c `"" DISPLAY_FUSION_PATH "`" -monitorloadprofile Zoomed",,"Hide"
   Sleep 2000
   Run A_ComSpec " /c " HDR_PATH " off",,"Hide"
   Run A_ComSpec " /c `"" TELEGRAM_PATH "`" -scale 85 -startintray",,"Hide"
