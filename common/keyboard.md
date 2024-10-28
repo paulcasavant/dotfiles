@@ -262,4 +262,6 @@ Layout: 84-key AT
 * <kbd>3</kbd> -> **M2** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>3</kbd> -> Set Audio Output to Arctis Media, Input to Arctis Mic
 * <kbd>4</kbd> -> **M3** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>4</kbd> -> Set Audio Output to Arctis Gaming, Input to Arctis Mic
 * <kbd>T</kbd> -> **M14** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> -> Restart TV
-* <kbd>Esc</kbd> -> **M15** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Esc</kbd> -> Power Off TV
+    * <kbd>Esc</kbd> -> **M15** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Esc</kbd> -> TV Screen Off
+* <kbd>P</kbd> -> **M4** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> -> TV On and Switch Input to PC
+* <kbd>L</kbd> -> **M5** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd> -> TV On and Switch Input to Laptop
