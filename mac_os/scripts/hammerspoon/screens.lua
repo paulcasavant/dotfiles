@@ -60,6 +60,10 @@ function screens.lgtv_exec_command(command)
   return hs.execute(command)
 end
 
+function screens.lgtv_wake_on_lan()
+  hs.execute(string.format("%s -c \"from wakeonlan import send_magic_packet; send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
+end
+
 function screens.lgtv_is_current_audio_device()
   local current_audio_device = hs.audiodevice.current().name
 
@@ -169,7 +173,7 @@ function screens.HandleSleepChange(eventType)
       eventType == hs.caffeinate.watcher.systemDidWake or
       eventType == hs.caffeinate.watcher.screensDidUnlock) then
     if screens.lgtv_is_connected() then
-      hs.execute(string.format("%s -c \"from wakeonlan import send_magic_packet; send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
+      screens.lgtv_wake_on_lan()
       screens.lgtv_exec_command("on") -- WOL IP address
       screens.lgtv_exec_command("screenOn") -- turn on screen
       screens.lgtv_log_d("TV was turned on")
@@ -195,7 +199,7 @@ function screens.HandleDisplayChange()
 
   if current_lgtv_connected ~= old_lgtv_connected then
     if current_lgtv_connected then
-      hs.execute(string.format("%s -c \"from wakeonlan import send_magic_packet; send_magic_packet('%s')\"", config.PYTHON_PATH, config.TV_MAC_ADDR)) -- WOL MAC Address
+      screens.lgtv_wake_on_lan()
       screens.lgtv_exec_command("on") -- WOL IP address
       screens.lgtv_exec_command("screenOn") -- turn on screen
       screens.lgtv_exec_command("setInput " .. config.LAPTOP_TV_INPUT)

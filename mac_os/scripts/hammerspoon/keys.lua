@@ -47,18 +47,39 @@ end)
 -- Hyper+T -> Restart TV
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 hs.hotkey.bind(hyper, "t", function()
-  hs.execute(string.format("%s off", config.LGTV_PATH))
-  common.Sleep(2)
-  hs.execute(string.format("%s on", config.LGTV_PATH))
+  screens.lgtv_exec_command("off")
+  common.Sleep(4)
+  screens.lgtv_wake_on_lan()
+  screens.lgtv_exec_command("on")
   hs.alert.show("Restarted TV")
 end)
 ----------------------------------------------------------------------------------------------------
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- Hyper+Esc -> TV Off
+-- Hyper+Esc -> TV Screen Off
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 hs.hotkey.bind(hyper, "escape", function()
-  hs.execute(string.format("%s off", config.LGTV_PATH))
+  screens.lgtv_exec_command("screenOff")
+end)
+----------------------------------------------------------------------------------------------------
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Hyper+P -> Turn on TV and Switch Input to PC
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+hs.hotkey.bind(hyper, "p", function()
+  screens.lgtv_wake_on_lan()
+  screens.lgtv_exec_command("on")
+  screens.lgtv_exec_command(string.format("setInput %s", config.PC_TV_INPUT))
+end)
+----------------------------------------------------------------------------------------------------
+---
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Hyper+L -> Turn on TV and Switch Input to Laptop
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+hs.hotkey.bind(hyper, "l", function()
+  screens.lgtv_wake_on_lan()
+  screens.lgtv_exec_command("on")
+  screens.lgtv_exec_command(string.format("setInput %s", config.LAPTOP_TV_INPUT))
 end)
 ----------------------------------------------------------------------------------------------------
 

@@ -1,12 +1,5 @@
 # Keyboard
 
-## Common
-
-* <kbd>Volume Increment</kbd> *when TV is primary audio device* -> Increment TV Volume
-* <kbd>Volume Decrement</kbd> *when TV is primary audio device* -> Decrement TV Volume
-* <kbd>Ctrl</kbd> + <kbd>Home</kbd> -> <kbd>Cmd</kbd> + <kbd>Up Arrow</kbd>
-* <kbd>Ctrl</kbd> + <kbd>End</kbd> -> <kbd>Cmd</kbd> + <kbd>Down Arrow</kbd>
-
 ## Windows
 
 ### Logitech G HUB
@@ -51,7 +44,7 @@
 * <kbd>Hyper</kbd> + <kbd>3</kbd> -> Set Audio Output to Arctis Media, Input to Arctis Mic
 * <kbd>Hyper</kbd> + <kbd>4</kbd> -> Set Audio Output to Arctis Gaming, Input to Arctis Mic
 * <kbd>Hyper</kbd> + <kbd>T</kbd> -> Restart TV
-* <kbd>Hyper</kbd> + <kbd>Esc</kbd> -> Power Off TV
+* <kbd>Hyper</kbd> + <kbd>Esc</kbd> -> TV Screen Off
 * <kbd>Cmd</kbd> + <kbd>Return</kbd> -> Launch Windows Terminal
 * <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Return</kbd> -> Launch Firefox
 
@@ -145,6 +138,9 @@
 * <kbd>Hyper</kbd> + <kbd>1</kbd> -> Set Audio Output to DAC, Input to Webcam
 * <kbd>Hyper</kbd> + <kbd>2</kbd> -> Set Audio Output to Speaker, Input to Webcam
 * <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> -> Toggle Fn Keys
+* <kbd>Hyper</kbd> + <kbd>Esc</kbd> -> Screen Off TV
+* <kbd>Hyper</kbd> + <kbd>P</kbd> -> Turn on TV and Set Input to PC
+* <kbd>Hyper</kbd> + <kbd>L</kbd> -> Turn on TV and Set Input to Laptop
 
 ### BetterTouchTool
 * <kbd>Alt</kbd> (Tab) + <kbd>1</kbd> -> Switch to Desktop 1
