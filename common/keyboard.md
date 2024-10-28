@@ -39,10 +39,9 @@
 * <kbd>Hyper</kbd> + <kbd>,</kbd> -> Brightness -10%
 * <kbd>Hyper</kbd> + <kbd>.</kbd> -> Brightness +10%
 * <kbd>Hyper</kbd> + <kbd>/</kbd> -> Brightness 100% (High)
-* <kbd>Hyper</kbd> + <kbd>1</kbd> -> Set Audio Output to DAC, Input to Webcam
-* <kbd>Hyper</kbd> + <kbd>2</kbd> -> Set Audio Output to Speaker, Input to Webcam
-* <kbd>Hyper</kbd> + <kbd>3</kbd> -> Set Audio Output to Arctis Media, Input to Arctis Mic
-* <kbd>Hyper</kbd> + <kbd>4</kbd> -> Set Audio Output to Arctis Gaming, Input to Arctis Mic
+* <kbd>Hyper</kbd> + <kbd>1</kbd> -> Set Audio Output and Input to Audeze Maxwell
+* <kbd>Hyper</kbd> + <kbd>2</kbd> -> Set Audio Output to DAC, Input to Sennheiser Mic
+* <kbd>Hyper</kbd> + <kbd>3</kbd> -> Set Audio Output to Speaker, Input to Webcam Mic
 * <kbd>Hyper</kbd> + <kbd>T</kbd> -> Restart TV
 * <kbd>Hyper</kbd> + <kbd>Esc</kbd> -> TV Screen Off
 * <kbd>Cmd</kbd> + <kbd>Return</kbd> -> Launch Windows Terminal

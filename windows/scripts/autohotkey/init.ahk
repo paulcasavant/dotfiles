@@ -166,19 +166,19 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t audeze_mic)",,"Hide"
 }
 
-; Menu+2 -> Set Audio Output to Speakers and Input to Camera Mic
+; Menu+2 -> Set Audio Output to DAC and Input to Sennheiser Mic
 #^!2::
+{
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t dac)",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t dac_mic)",,"Hide" ; Sennheiser mic
+}
+
+; Menu+3 -> Set Audio Output to Speakers and Input to Camera Mic
+#^!3::
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t sonos)",,"Hide"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t camera_mic)",,"Hide"
   Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
-}
-
-; Menu+3 -> Set Audio Output to DAC and Input to Sennheiser Mic
-#^!3::
-{
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t dac)",,"Hide"
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t dac_mic)",,"Hide" ; Sennheiser mic
 }
 
 ; Menu+T -> Restart TV
