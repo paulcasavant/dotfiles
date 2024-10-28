@@ -78,6 +78,21 @@ F13::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume -1",,
 ; Menu+Volume Up -> Set Sonos Relative Volume +1 
 F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,"Hide"
 
+; Hyper+P -> TV On, Switch Input to PC, Switch Audio to TV
+#^!P::{
+  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
+  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi3",,"Hide"
+  Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" switch_to_tv",,"Hide"
+}
+
+; Hyper+L -> TV On, Switch Input to Laptop, Switch Audio to TV
+#^!L::
+{
+  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
+  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi1",,"Hide"
+  Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" switch_to_tv",,"Hide"
+}
+
 ; Hyper+F1 -> Normalize Resolution with HDR On
 #^!F1::
 {
@@ -144,47 +159,40 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -backlight 25",,"Hide"
 }
 
-; Menu+1 -> Set audio to DAC Headphones
+; Menu+1 -> Set Input and Output Audio to Audeze Maxwell
 #^!1::
 {
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t dac)",,"Hide" ; DAC
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t mic)",,"Hide" ; Sennheiser mic
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t audeze)",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t audeze_mic)",,"Hide"
 }
 
-; Menu+2 -> Set audio to Speakers
+; Menu+2 -> Set Audio Output to Speakers and Input to Camera Mic
 #^!2::
 {
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t sonos)",,"Hide" ; TV
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t mic)",,"Hide" ; Sennheiser mic
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t sonos)",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t camera_mic)",,"Hide"
   Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
 }
 
-; Menu+3 -> Set audio to Steelseries Arctis Nova Pro (Media)
+; Menu+3 -> Set Audio Output to DAC and Input to Sennheiser Mic
 #^!3::
 {
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t arctis_media)",,"Hide" ; Media
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t arctis_mic)",,"Hide" ; Chat
-}
-
-; Menu+4 -> Set audio to Steelseries Arctis Nova Pro (Gaming)
-#^!4::
-{
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t arctis_gaming)",,"Hide" ; Gaming
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t arctis_mic)",,"Hide" ; Chat
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t dac)",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t dac_mic)",,"Hide" ; Sennheiser mic
 }
 
 ; Menu+T -> Restart TV
 #^!T::
 {
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweroff",,"Hide"
-  Sleep(1000)
+  Sleep(4000)
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
 }
 
 ; Menu+Esc ->  Power Off TV
 #^!esc::
 {
-  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweroff",,"Hide"
+  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -screenoff",,"Hide"
 }
 
 ; Super+Shift+Enter -> Opens Firefox

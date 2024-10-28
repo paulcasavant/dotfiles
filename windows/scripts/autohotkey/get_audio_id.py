@@ -6,17 +6,20 @@ import subprocess
 import argparse
 
 DAC_TYPE = 'dac'
-ARCTIS_MEDIA_TYPE = 'arctis_media'
-ARCTIS_GAMING_TYPE = 'arctis_gaming'
-ARCTIS_MIC_TYPE = 'arctis_mic'
+HEADPHONE = 'audeze'
+AUDEZE_MIC = 'mic'
 SONOS_TYPE = 'sonos'
 MIC_TYPE = 'mic'
+AUDEZE_MIC = 'audeze_mic'
+CAMERA_MIC = 'camera_mic'
+DAC_MIC = 'dac_mic'
 
 MAPPING = {
   DAC_TYPE: 'FiiO USB DAC-E10',
-  ARCTIS_MEDIA_TYPE: 'SteelSeries Sonar - Media (SteelSeries Sonar Virtual Audio Device)',
-  ARCTIS_GAMING_TYPE: 'SteelSeries Sonar - Gaming (SteelSeries Sonar Virtual Audio Device)',
-  ARCTIS_MIC_TYPE: 'Microphone (Arctis Nova Pro Wireless)',
+  HEADPHONE: 'Speakers (Game-Audeze Maxwell)',
+  AUDEZE_MIC: 'Microphone (Chat-Audeze Maxwell)',
+  CAMERA_MIC: 'Microphone (C922 Pro Stream Webcam)',
+  DAC_MIC: 'Microphone (High Definition Audio Device)',
   SONOS_TYPE: 'LG TV SSCR2 (NVIDIA High Definition Audio)',
   MIC_TYPE: 'Microphone (High Definition Audio Device)'
 }
