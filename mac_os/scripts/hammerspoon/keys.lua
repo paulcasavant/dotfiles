@@ -145,10 +145,10 @@ end)
 ----------------------------------------------------------------------------------------------------
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- Hyper+2 -> Set Audio Output to DAC
+-- Hyper+2 -> Set Audio Output to DAC, Input to Webcam Mic
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 hs.hotkey.bind(hyper, "2", function()
-  hs.execute(string.format("/opt/homebrew/bin/SwitchAudioSource -s '%s'", config.DAC_NAME))
+  hs.execute(string.format("/opt/homebrew/bin/SwitchAudioSource -s '%s';/opt/homebrew/bin/SwitchAudioSource -t input -s '%s'", config.DAC_NAME, config.WEBCAM_NAME))
   hs.alert.show("Audio: DAC")
 end)
 ----------------------------------------------------------------------------------------------------
