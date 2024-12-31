@@ -79,6 +79,7 @@ end)
 hs.hotkey.bind(hyper, "l", function()
   screens.lgtv_wake_on_lan()
   screens.lgtv_exec_command("on")
+  screens.lgtv_exec_command("screenOn")
   screens.lgtv_exec_command(string.format("setInput %s", config.LAPTOP_TV_INPUT))
 end)
 ----------------------------------------------------------------------------------------------------
