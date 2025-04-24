@@ -79,6 +79,7 @@ end)
 hs.hotkey.bind(hyper, "l", function()
   screens.lgtv_wake_on_lan()
   screens.lgtv_exec_command("on")
+  screens.lgtv_exec_command("screenOn")
   screens.lgtv_exec_command(string.format("setInput %s", config.LAPTOP_TV_INPUT))
 end)
 ----------------------------------------------------------------------------------------------------
@@ -136,18 +137,27 @@ end)
 ----------------------------------------------------------------------------------------------------
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- Hyper+1 -> Set Audio Output to DAC, Input to Webcam
+-- Hyper+1 -> Set Audio Input and Output to Audeze Maxwell
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 hs.hotkey.bind(hyper, "1", function()
-  hs.execute(string.format("/opt/homebrew/bin/SwitchAudioSource -s '%s';/opt/homebrew/bin/SwitchAudioSource -t input -s '%s'", config.DAC_NAME, config.WEBCAM_NAME))
-  hs.alert.show("Audio: Headphones")
+  hs.execute(string.format("/opt/homebrew/bin/SwitchAudioSource -s '%s';/opt/homebrew/bin/SwitchAudioSource -t input -s '%s'", config.AUDEZE, config.AUDEZE_MIC))
+  hs.alert.show("Audio: Audeze Maxwell")
 end)
 ----------------------------------------------------------------------------------------------------
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- Hyper+2 -> Set Audio Output to Speaker, Input to Webcam
+-- Hyper+2 -> Set Audio Output to DAC, Input to Webcam Mic
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 hs.hotkey.bind(hyper, "2", function()
+  hs.execute(string.format("/opt/homebrew/bin/SwitchAudioSource -s '%s';/opt/homebrew/bin/SwitchAudioSource -t input -s '%s'", config.DAC_NAME, config.WEBCAM_NAME))
+  hs.alert.show("Audio: DAC")
+end)
+----------------------------------------------------------------------------------------------------
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Hyper+3 -> Set Audio Output to Speaker, Input to Webcam Mic
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+hs.hotkey.bind(hyper, "3", function()
   hs.execute(string.format("/opt/homebrew/bin/SwitchAudioSource -s '%s';/opt/homebrew/bin/SwitchAudioSource -t input -s '%s'", config.CONNECTED_TV_IDENTIFIERS[2], config.WEBCAM_NAME))
   hs.alert.show("Audio: Speaker")
 end)

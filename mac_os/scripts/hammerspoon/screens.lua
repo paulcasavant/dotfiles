@@ -113,6 +113,7 @@ function screens.watch_keyboard_set_hdmi()
     if current_keyboard_state ~= previous_keyboard_state then
         if current_keyboard_state then
             -- If there's any output, switch to laptop input
+            screens.lgtv_wake_on_lan()
             screens.lgtv_exec_command("startApp " .. LAPTOP_INPUT_APP_ID)
         else
             -- If there's no output, switch to PC input
