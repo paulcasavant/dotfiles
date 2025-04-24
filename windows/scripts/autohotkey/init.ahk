@@ -81,7 +81,7 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,
 ; Hyper+P -> TV On, Switch Input to PC, Switch Audio to TV
 #^!P::{
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
-  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi3",,"Hide"
+  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" PC_HDMI_NUMBER,,"Hide"
   Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" switch_to_tv",,"Hide"
 }
 
@@ -89,7 +89,7 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,
 #^!L::
 {
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
-  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi1",,"Hide"
+  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" LAPTOP_HDMI_NUMBER,,"Hide"
   Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" switch_to_tv",,"Hide"
 }
 
