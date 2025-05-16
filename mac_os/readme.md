@@ -28,6 +28,7 @@
   * Finder > Customize Toolbar... > *Add Airdrop to toolbar*
 
 ## Applications
+* [Horo](https://apps.apple.com/us/app/horo-timer-for-menu-bar/id1437226581?mt=12)
 * [Menu Bar Controller for Sonos](https://apps.apple.com/us/app/menu-bar-controller-for-sonos/id1357379892?mt=12)
     * Settings > Shortcuts > Set *Increase/Decrease volume on current group* to <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Q</kbd>/<kbd>E</kbd>
     * Settings > Shortcuts > Uncheck *Show pop-up when using shortcuts*
