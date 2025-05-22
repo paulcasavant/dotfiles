@@ -29,7 +29,10 @@ config.CONNECTED_TV_IDENTIFIERS = {"LG TV", "LG TV SSCR2"}
 -- TV name configured with `~/bin/lgtv auth` or in `~/.lgtv/config.json`
 config.TV_NAME = ""
 
--- MAC address
+-- TV IP address
+config.TV_IP_ADDR = ""
+
+-- TV MAC address
 config.TV_MAC_ADDR = ""
 
 -- Input to which your Mac is connected

@@ -2,13 +2,14 @@
 
 ## Setup
 
-* Set a static IP for TV
-* Add configuration info to Hammerspoon `config.lua`
+1. Set a static IP for TV
+2. Add configuration info to Hammerspoon `config.lua`
   1. `cp $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua.template $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua`
   2. Populate `config.lua` with configuration info
   3. Reload *Hammerspoon*
-* Run the environment setup script: `source $HOME/repos/dotfiles/mac_os/scripts/setup.sh`
-* Execute script to move the Karabiner Elements configuration file: `$CONFIG_PATH/karabiner-elements/sync_karabiner.sh`
+3. Run `./install.sh`
+4. Run the environment setup script: `source $HOME/repos/dotfiles/mac_os/scripts/setup.sh`
+5. Execute script to move the Karabiner Elements configuration file: `$CONFIG_PATH/karabiner-elements/sync_karabiner.sh`
 
 ## Settings
   * Enable key-repeating: `defaults write -g ApplePressAndHoldEnabled -bool false`
