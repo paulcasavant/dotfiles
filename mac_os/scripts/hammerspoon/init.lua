@@ -8,10 +8,7 @@ local lgtv = require('lgtv')
 -- Enable Hammerspoon CLI
 hs.ipc.cliInstall()
 
--- -- On Startup if LGTV Connected -> Normalize Menu Bar and Dock
-if lgtv:is_connected() then
-  screens.normalize_menu_bar_and_dock()
-end
+screens.normalize_menu_bar_and_dock()
 
 -- Poll keyboard every 1s
 hs.timer.doEvery(1, screens.watch_keyboard_set_hdmi)
