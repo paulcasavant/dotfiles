@@ -16,7 +16,7 @@ require('core.plugins')
 
 -- General settings
 vim.o.number = true                -- Enable line numbers
-vim.o.relativenumber = true         -- Relative line numbers
+vim.o.relativenumber = false       -- Relative line numbers
 vim.o.mouse = 'a'                  -- Enable mouse
 vim.o.clipboard = 'unnamedplus'    -- System clipboard integration
 vim.o.expandtab = true             -- Convert tabs to spaces
@@ -45,12 +45,21 @@ vim.api.nvim_set_keymap(
 )
 
 -- Plugin configurations
-require('plugins.lsp_config')       -- LSP settings
+require('plugins.lsp_config')         -- LSP settings
 require('plugins.treesitter_config')  -- Treesitter settings
 require('plugins.telescope_config')   -- Telescope settings
 require('plugins.gitsigns_config')    -- Gitsigns settings
 require('plugins.lualine_config')     -- Statusline settings
 require('plugins.nvimtree_config')    -- File explorer settings
+
+require("packer").startup(function()  -- Lazy commenting
+  use {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end
+  }
+end)
 
 -- Autocompletion settings
 require('plugins.cmp_config')
