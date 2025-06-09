@@ -8,7 +8,7 @@ local lgtv = require('lgtv')
 -- Enable Hammerspoon CLI
 hs.ipc.cliInstall()
 
-screens.normalize_menu_bar_and_dock()
+-- screens.normalize_menu_bar_and_dock()
 
 -- Poll keyboard every 1s
-hs.timer.doEvery(1, screens.watch_keyboard_set_hdmi)
+-- hs.timer.doEvery(1, screens.watch_keyboard_set_hdmi)
