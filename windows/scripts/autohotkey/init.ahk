@@ -3,7 +3,7 @@
 #Include config.ahk
 
 ; Switch input to PC on startup
-Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" PC_HDMI_NUMBER,,"Hide"
+; Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" PC_HDMI_NUMBER,,"Hide"
 
 ; Function to monitor the keyboard connection and switch HDMI inputs based on its state
 WatchKeyboardSetHDMI(DeviceID, LGTV_CLI_PATH) {
@@ -49,7 +49,7 @@ WatchKeyboardSetHDMI(DeviceID, LGTV_CLI_PATH) {
 }
 
 ; Call the function to start monitoring the keyboard connection and manage HDMI switching
-WatchKeyboardSetHDMI(KEYBOARD_ID, LGTV_CLI_PATH)
+; WatchKeyboardSetHDMI(KEYBOARD_ID, LGTV_CLI_PATH)
 
 ; CapsLock -> Ctrl
 CapsLock::Ctrl
