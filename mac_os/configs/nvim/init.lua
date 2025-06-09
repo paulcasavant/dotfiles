@@ -16,7 +16,7 @@ require('core.plugins')
 
 -- General settings
 vim.o.number = true                -- Enable line numbers
-vim.o.relativenumber = true         -- Relative line numbers
+vim.o.relativenumber = false       -- Relative line numbers
 vim.o.mouse = 'a'                  -- Enable mouse
 vim.o.clipboard = 'unnamedplus'    -- System clipboard integration
 vim.o.expandtab = true             -- Convert tabs to spaces
@@ -45,18 +45,95 @@ vim.api.nvim_set_keymap(
 )
 
 -- Plugin configurations
-require('plugins.lsp_config')       -- LSP settings
-require('plugins.treesitter_config')  -- Treesitter settings
-require('plugins.telescope_config')   -- Telescope settings
-require('plugins.gitsigns_config')    -- Gitsigns settings
-require('plugins.lualine_config')     -- Statusline settings
-require('plugins.nvimtree_config')    -- File explorer settings
+require("packer").startup(function(use)
+  use "wbthomason/packer.nvim"  -- Packer can manage itself
 
--- Autocompletion settings
-require('plugins.cmp_config')
+  -- Commenting
+  use {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end
+  }
 
--- Auto pairs (for automatically closing brackets, etc.)
--- require('lua.nvim-autopairs').setup{}
+  -- Autopairs
+  use {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  }
+
+  -- LSP
+  use {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.lsp_config")
+    end
+  }
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = function()
+      require("plugins.treesitter_config")
+    end
+  }
+
+  -- FIXME: broken
+  -- Telescope
+  -- use {
+  --   "nvim-telescope/telescope.nvim",
+  --   requires = { "nvim-lua/plenary.nvim" },
+  --   config = function()
+  --     require("plugins.telescope_config")
+  --   end
+  -- }
+
+  -- Gitsigns
+  use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("plugins.gitsigns_config")
+    end
+  }
+
+  -- Lualine
+  use {
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require("plugins.lualine_config")
+    end
+  }
+
+  -- NvimTree
+  use {
+    "kyazdani42/nvim-tree.lua",
+    config = function()
+      require("plugins.nvimtree_config")
+    end
+  }
+
+  -- Fuzzy matching
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'L3MON4D3/LuaSnip', -- if you're using snippets
+      'saadparwaiz1/cmp_luasnip'
+    }
+  }
+
+  -- Theme
+  use 'folke/tokyonight.nvim'
+
+  -- Add more plugins here as needed...
+end)
 
 -- Set colorscheme
 vim.cmd [[colorscheme tokyonight]]

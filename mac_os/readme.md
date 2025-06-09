@@ -2,13 +2,14 @@
 
 ## Setup
 
-* Set a static IP for TV
-* Add configuration info to Hammerspoon `config.lua`
+1. Set a static IP for TV
+2. Add configuration info to Hammerspoon `config.lua`
   1. `cp $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua.template $HOME/repos/dotfiles/mac_os/scripts/hammerspoon/config.lua`
   2. Populate `config.lua` with configuration info
   3. Reload *Hammerspoon*
-* Run the environment setup script: `source $HOME/repos/dotfiles/mac_os/scripts/setup.sh`
-* Execute script to move the Karabiner Elements configuration file: `$CONFIG_PATH/karabiner-elements/sync_karabiner.sh`
+3. Run `./install.sh`
+4. Run the environment setup script: `source $HOME/repos/dotfiles/mac_os/scripts/setup.sh`
+5. Execute script to move the Karabiner Elements configuration file: `$CONFIG_PATH/karabiner-elements/sync_karabiner.sh`
 
 ## Settings
   * Enable key-repeating: `defaults write -g ApplePressAndHoldEnabled -bool false`
@@ -28,6 +29,7 @@
   * Finder > Customize Toolbar... > *Add Airdrop to toolbar*
 
 ## Applications
+* [Horo](https://apps.apple.com/us/app/horo-timer-for-menu-bar/id1437226581?mt=12)
 * [Menu Bar Controller for Sonos](https://apps.apple.com/us/app/menu-bar-controller-for-sonos/id1357379892?mt=12)
     * Settings > Shortcuts > Set *Increase/Decrease volume on current group* to <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Q</kbd>/<kbd>E</kbd>
     * Settings > Shortcuts > Uncheck *Show pop-up when using shortcuts*
