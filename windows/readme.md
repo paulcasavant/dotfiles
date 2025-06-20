@@ -31,7 +31,7 @@
 
 ## Applications
 
-* [Monitorian](https://github.com/emoacht/Monitorian)
+* [Twinkle Tray](https://github.com/xanderfrangos/twinkle-tray)
 * [Apollo](https://github.com/ClassicOldSong/Apollo)
 * [Google Chrome](https://www.google.com/chrome/)
 * [Firefox](https://www.mozilla.org/firefox/)
