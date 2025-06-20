@@ -31,6 +31,8 @@
 
 ## Applications
 
+* [Monitorian](https://github.com/emoacht/Monitorian)
+* [Apollo](https://github.com/ClassicOldSong/Apollo)
 * [Google Chrome](https://www.google.com/chrome/)
 * [Firefox](https://www.mozilla.org/firefox/)
 * [WinDirStat](https://windirstat.net/)
