@@ -2,9 +2,6 @@
 
 #Include config.ahk
 
-; Switch input to PC on startup
-; Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" PC_HDMI_NUMBER,,"Hide"
-
 ; Function to monitor the keyboard connection and switch HDMI inputs based on its state
 WatchKeyboardSetHDMI(DeviceID, LGTV_CLI_PATH) {
     ; Declare prevState as static to remember the last known state between loop iterations
