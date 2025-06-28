@@ -30,7 +30,14 @@
     7. Set *Add arguments* to `%SCRIPT_PATH%\windows\scripts\autohotkey\init.ahk`
 
 ## Applications
-
+* [TaskbarX](https://apps.microsoft.com/detail/9PCMZ6BXK8GH?hl=en-us&gl=US&ocid=pdpshare)
+   * Fix Steam Big Picture w/ Hidden Taskbar:
+      1. Open *TaskbarX Configurator*
+      2. Style > Style > Opaque > Apply
+      3. Startup > Set Delay to 0 sec > Create > Apply
+* [TranslucentTB](https://apps.microsoft.com/detail/9PF4KZ2VN4W9?hl=en-us&gl=US&ocid=pdpshare)
+   1. Right Click *TranslucentTB* Tray Icon
+   2. Desktop > Opaque
 * [Twinkle Tray](https://github.com/xanderfrangos/twinkle-tray)
 * [Apollo](https://github.com/ClassicOldSong/Apollo)
 * [Google Chrome](https://www.google.com/chrome/)
