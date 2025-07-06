@@ -28,16 +28,59 @@
     5. Go to the *Actions* tab, select *New...*, and set *Action* to *Start a program*
     6. Set *Program/script* to `"C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe"`
     7. Set *Add arguments* to `%SCRIPT_PATH%\windows\scripts\autohotkey\init.ahk`
+* Improve Performance
+
+# Enable Maximum Performance on NVIDIA GPU and Windows
+
+## Step 1: Set NVIDIA GPU to "Prefer Maximum Performance" Globally
+
+1. **Right-click** on your desktop and select **NVIDIA Control Panel**.
+
+2. In the left-hand panel, click:
+   ```
+   Manage 3D settings
+   ```
+
+3. Under the **Global Settings** tab, find:
+   ```
+   Power management mode
+   ```
+
+4. Click the dropdown menu and select:
+   ```
+   Prefer maximum performance
+   ```
+
+5. Click **Apply** in the bottom right corner.
+
+---
+
+## Step 2: Enable "Ultimate Performance" Power Plan in Windows
+
+1. Press `Win + X`, then click **Windows Terminal (Admin)** or **Command Prompt (Admin)**.
+2. Paste and run the following command:
+
+   ```cmd
+   powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+   ```
+
+3. Then go to:
+
+   ```
+   Control Panel → Power Options
+   ```
+
+4. Select the newly available **Ultimate Performance** plan.
 
 ## Applications
+* [AutoActions](https://github.com/Codectory/AutoActions)
+   >⚠️ Store in `C:\AutoActions`
 * [TaskbarX](https://apps.microsoft.com/detail/9PCMZ6BXK8GH?hl=en-us&gl=US&ocid=pdpshare)
    * Fix Steam Big Picture w/ Hidden Taskbar:
       1. Open *TaskbarX Configurator*
       2. Style > Style > Opaque > Apply
       3. Startup > Set Delay to 0 sec > Create > Apply
-* [TranslucentTB](https://apps.microsoft.com/detail/9PF4KZ2VN4W9?hl=en-us&gl=US&ocid=pdpshare)
-   1. Right Click *TranslucentTB* Tray Icon
-   2. Desktop > Opaque
+         >⚠️ **Remove** and **Create** again if any settings change.
 * [Twinkle Tray](https://github.com/xanderfrangos/twinkle-tray)
 * [Apollo](https://github.com/ClassicOldSong/Apollo)
 * [Google Chrome](https://www.google.com/chrome/)
