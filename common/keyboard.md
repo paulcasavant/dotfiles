@@ -256,7 +256,7 @@ Layout: 84-key AT
 * <kbd>1</kbd> -> **M4** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> -> Set Audio Output to DAC, Input to Sennheiser Mic
 * <kbd>2</kbd> -> **M5** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> -> Set Audio Input and Output to Audeze Maxwell
 * <kbd>3</kbd> -> **M6** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>3</kbd> -> Set Audio Output to Speaker, Input to Camera Mic
-* <kbd>T</kbd> -> **M14** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> -> Restart TV
-    * <kbd>Esc</kbd> -> **M15** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Esc</kbd> -> TV Screen Off
-* <kbd>P</kbd> -> **M4** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> -> TV On and Switch Input to PC
-* <kbd>L</kbd> -> **M5** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd> -> TV On and Switch Input to Laptop
+* <kbd>Esc</kbd> -> **M7** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Esc</kbd> -> TV Screen Off
+* <kbd>~</kbd> -> **M8** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> -> Restart TV
+* <kbd>P</kbd> -> **M9** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> -> TV On and Switch Input to PC
+* <kbd>L</kbd> -> **M10** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd> -> TV On and Switch Input to Laptop

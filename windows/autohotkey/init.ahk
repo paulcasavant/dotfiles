@@ -96,18 +96,18 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
   ShowTemporaryMessage("🔊 Sonos Arc", 2000)
 }
 
-; Menu+T -> Restart TV
-#^!T::
-{
-  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweroff",,"Hide"
-  Sleep(4000)
-  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
-}
-
 ; Menu+Esc ->  Power Off TV
 #^!esc::
 {
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -screenoff",,"Hide"
+}
+
+; Menu+T -> Restart TV
+#^!`::
+{
+  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweroff",,"Hide"
+  Sleep(4000)
+  Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
 }
 
 ; Super+Enter -> Opens Windows Terminal
