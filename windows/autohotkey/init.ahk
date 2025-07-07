@@ -1,11 +1,6 @@
 ﻿#Requires AutoHotkey v2.0
 #Include config.ahk
 
-; Black bar at the bottom of the screen
-myGui := Gui("+AlwaysOnTop -Caption +ToolWindow")
-myGui.BackColor := "Black"
-myGui.Show("x0 y" (A_ScreenHeight - 2) " w" A_ScreenWidth " h1")
-
 ShowTemporaryMessage(msg, duration := 2000) {
     Gui1 := Gui("+AlwaysOnTop -Caption +ToolWindow +Border +LastFound +Owner")
     Gui1.BackColor := "Black"
