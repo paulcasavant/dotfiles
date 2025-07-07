@@ -77,7 +77,7 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
 }
 
 ; Menu+1 -> Set Audio Output to DAC and Input to Sennheiser Mic
-#^!2::
+#^!1::
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t dac)",,"Hide"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t mic)",,"Hide" ; Sennheiser mic
@@ -85,7 +85,7 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
 }
 
 ; Menu+2 -> Set Input and Output Audio to Audeze Maxwell
-#^!1::
+#^!2::
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze)",,"Hide"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze_mic)",,"Hide"

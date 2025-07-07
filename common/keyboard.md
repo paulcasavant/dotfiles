@@ -219,14 +219,10 @@ Layout: 84-key AT
 * <kbd>,</kbd> -> **M2** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>,</kbd> -> Decrement Brightness
 * <kbd>.</kbd> -> **M3** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>.</kbd> -> Increment Brightness
 * <kbd>/</kbd> -> **M4** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>/</kbd> -> High Brightness
-* <kbd>F1</kbd> -> **M5** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F1</kbd> -> Normal Resolution with HDR On
-* <kbd>F2</kbd> -> **M6** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F2</kbd> -> Normal Resolution with HDR Off
-* <kbd>F1</kbd> -> **M14** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F3</kbd> -> Zoomed Resolution with HDR On
-* <kbd>F2</kbd> -> **M15** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F4</kbd> -> Zoomed Resolution with HDR Off
 * <kbd>1</kbd> -> **M7** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> -> Set Audio Input and Output to Audeze Maxwell
 * <kbd>2</kbd> -> **M8** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> -> Set Audio Output to DAC, Input to Sennheiser Mic
 * <kbd>3</kbd> -> **M7** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>3</kbd> -> Set Audio Output to Speaker, Input to Camera Mic
-* <kbd>T</kbd> -> **M9** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> -> Restart TV
+* <kbd>`</kbd> -> **M9** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>`</kbd> -> Restart TV
 * <kbd>Esc</kbd> -> **M10** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Esc</kbd> -> TV Screen Off
 * <kbd>P</kbd> -> **M12** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> -> TV On and Switch Input to PC
 * <kbd>L</kbd> -> **M11** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd> -> TV On and Switch Input to Laptop
