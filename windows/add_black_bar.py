@@ -45,7 +45,7 @@ def set_wallpaper(image_path):
     # SPI_SETDESKWALLPAPER = 20
     result = ctypes.windll.user32.SystemParametersInfoW(20, 0, image_path, 3)
     if result:
-        print(f"🖼️ Wallpaper successfully set to: {image_path}")
+        print(f"🖼️  Wallpaper successfully set to: {image_path}")
     else:
         print("❌ Failed to set wallpaper.")
 
