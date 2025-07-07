@@ -57,17 +57,18 @@ template_content = template_path.read_text(encoding='utf-8')
 pattern = re.compile(r'^(?P<key>\w+)\s*:=\s*(?P<value>".*?"|[^"\r\n]+)', re.MULTILINE)
 variables = {match.group("key"): match.group("value") for match in pattern.finditer(template_content)}
 
-def is_likely_path(val: str) -> bool:
-    val = val.strip('"')
-    return (
-        ('\\' in val or '/' in val)
-        and not val.lower().startswith(('dotfiles_path',))
-        and not val.lower().endswith('.py')
-        and not val.startswith('$HOME')
-    )
+def is_likely_path(key: str, val: str) -> bool:
+    return 'PATH' in key.upper()
 
 def path_exists(val: str) -> bool:
+    HOME_VAR = "$HOME"
+
     val = val.strip('"')
+
+    if HOME_VAR in val:
+        home = os.path.expanduser("~")
+        val = val.replace(HOME_VAR, home)
+        
     val = os.path.expandvars(val)
     val = os.path.expanduser(val)
     return Path(val).exists()
@@ -78,7 +79,7 @@ for key, value in variables.items():
     reason = ""
     allow_recheck = False
 
-    if is_likely_path(value) and not path_exists(value):
+    if is_likely_path(key, value) and not path_exists(value):
         prompt_user = True
         reason = "⚠️  Path does not exist"
         allow_recheck = True
@@ -92,7 +93,7 @@ for key, value in variables.items():
             if allow_recheck:
                 user_input = input("Enter new value (Enter to keep, R to recheck): ").strip()
                 if user_input.lower() == 'r':
-                    if not is_likely_path(value) or path_exists(value):
+                    if not is_likely_path(key, value) or path_exists(value):
                         print("✅ Path now exists.")
                         break
                     else:

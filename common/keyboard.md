@@ -249,17 +249,13 @@ Layout: 84-key AT
 
 * <kbd>Volume Down</kbd> -> <kbd>F13</kbd> (Sonos Relative Volume Decrement)
 * <kbd>Volume Up</kbd> -> <kbd>F14</kbd> (Sonos Relative Volume Increment)
-* <kbd>F1</kbd> -> **M6** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F1</kbd> -> Normalize Resolution with HDR On
-* <kbd>F2</kbd> -> **M7** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F2</kbd> -> Normalize Resolution with HDR Off
-* <kbd>F3</kbd> -> **M8** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F3</kbd> -> Normalize Resolution with HDR On (Zoomed) 
-* <kbd>F4</kbd> -> **M9** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F4</kbd> -> Normalize Resolution with HDR On (Zoomed)
-* <kbd>M</kbd> -> **M10** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> (Brightness 25% [Low])
-* <kbd>,</kbd> -> **M11** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>,</kbd> (Brightness -10%)
-* <kbd>.</kbd> -> **M12** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>.</kbd> (Brightness +10%)
-* <kbd>/</kbd> -> **M13** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>/</kbd> (Brightness 100% [High])
-* <kbd>1</kbd> -> **M0** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> -> Set Audio Input and Output to Audeze Maxwell
-* <kbd>2</kbd> -> **M1** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> -> Set Audio Output to DAC, Input to Sennheiser Mic
-* <kbd>3</kbd> -> **M2** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>3</kbd> -> Set Audio Output to Speaker, Input to Camera Mic
+* <kbd>M</kbd> -> **M0** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd> (Brightness 25% [Low])
+* <kbd>,</kbd> -> **M1** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>,</kbd> (Brightness -10%)
+* <kbd>.</kbd> -> **M2** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>.</kbd> (Brightness +10%)
+* <kbd>/</kbd> -> **M3** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>/</kbd> (Brightness 100% [High])
+* <kbd>1</kbd> -> **M4** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> -> Set Audio Input and Output to Audeze Maxwell
+* <kbd>2</kbd> -> **M5** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> -> Set Audio Output to DAC, Input to Sennheiser Mic
+* <kbd>3</kbd> -> **M6** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>3</kbd> -> Set Audio Output to Speaker, Input to Camera Mic
 * <kbd>T</kbd> -> **M14** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> -> Restart TV
     * <kbd>Esc</kbd> -> **M15** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Esc</kbd> -> TV Screen Off
 * <kbd>P</kbd> -> **M4** (Macro) -> <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> -> TV On and Switch Input to PC

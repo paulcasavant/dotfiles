@@ -1,39 +1,48 @@
 ﻿#Requires AutoHotkey v2.0
 #Include config.ahk
 
+ShowTemporaryMessage(msg, duration := 2000) {
+    Gui1 := Gui("+AlwaysOnTop -Caption +ToolWindow +Border +LastFound +Owner")
+    Gui1.BackColor := "Black"
+    Gui1.SetFont("s12 cWhite", "Segoe UI")
+    Gui1.Add("Text", "Center vMyText", msg)
+    Gui1.Show("NoActivate AutoSize Center")
+
+    SetTimer(() => Gui1.Destroy(), duration)
+}
 
 ; CapsLock -> Ctrl
 CapsLock::Ctrl
 
-; Ctrl+H/J/K/L -> Left/Down/Up/Right
-^h::Send("{Left}")
-^j::Send("{Down}")
-^k::Send("{Up}")
-^l::Send("{Right}")
+; ; Ctrl+H/J/K/L -> Left/Down/Up/Right
+; ^h::Send("{Left}")
+; ^j::Send("{Down}")
+; ^k::Send("{Up}")
+; ^l::Send("{Right}")
 
-; Alt+C/A/V/X -> Ctrl+C/A/V/X
-!c::Send("^c")
-!a::Send("^a")
-!v::Send("^v")
-!x::Send("^x")
+; ; Alt+C/A/V/X -> Ctrl+C/A/V/X
+; !c::Send("^c")
+; !a::Send("^a")
+; !v::Send("^v")
+; !x::Send("^x")
 
 ; Ctrl+Volume Down -> Set Sonos Relative Volume -1 
-^Volume_Down::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume -1",,"Hide"
+^Volume_Down::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume -1",,"Hide"
 
 ; Ctrl+Volume Up -> Set Sonos Relative Volume +1 
-^Volume_Up::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,"Hide"
+^Volume_Up::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"Hide"
 
 ; Menu+Volume Down -> Set Sonos Relative Volume -1 
-F13::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume -1",,"Hide"
+F13::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume -1",,"Hide"
 
 ; Menu+Volume Up -> Set Sonos Relative Volume +1 
-F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,"Hide"
+F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"Hide"
 
 ; Hyper+P -> TV On, Switch Input to PC, Switch Audio to TV
 #^!P::{
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" PC_HDMI_NUMBER,,"Hide"
-  Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" switch_to_tv",,"Hide"
+  Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" switch_to_tv",,"Hide"
 }
 
 ; Hyper+L -> TV On, Switch Input to Laptop, Switch Audio to TV
@@ -41,21 +50,21 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,
 {
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -poweron",,"Hide"
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -sethdmi" LAPTOP_HDMI_NUMBER,,"Hide"
-  Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" switch_to_tv",,"Hide"
+  Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" switch_to_tv",,"Hide"
 }
 
 ; Menu+. (>) -> Increase TV brightness by 10
 #^!.::
 {
   keywait "F13"
-  Run A_ComSpec " /c python " SET_BRIGHTNESS_SCRIPT_PATH " increase",,"Hide"
+  Run A_ComSpec " /c python " BRIGHTNESS_SCRIPT_PATH " increase",,"Hide"
 }
 
 ; Menu+, (<) -> Decrease TV relative brightness by 10
 #^!,::
 {
   keywait "F14"
-  Run A_ComSpec " /c python " SET_BRIGHTNESS_SCRIPT_PATH " decrease",,"Hide"
+  Run A_ComSpec " /c python " BRIGHTNESS_SCRIPT_PATH " decrease",,"Hide"
 }
 
 ; Menu+/ -> Set TV brightness to maximum
@@ -73,23 +82,28 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"Bedroom Speaker`" relative_volume +1",,
 ; Menu+1 -> Set Input and Output Audio to Audeze Maxwell
 #^!1::
 {
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t audeze)",,"Hide"
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t audeze_mic)",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze)",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze_mic)",,"Hide"
+  ShowTemporaryMessage("🎧 Audeze Maxwell", 2000) ; message, duration in ms
 }
+
+; z::MsgBox(AUDIO_SCRIPT_PATH)
 
 ; Menu+2 -> Set Audio Output to DAC and Input to Sennheiser Mic
 #^!2::
 {
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t dac)",,"Hide"
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t mic)",,"Hide" ; Sennheiser mic
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t dac)",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t mic)",,"Hide" ; Sennheiser mic
+  ShowTemporaryMessage("🎧 Topping DX3 Pro+", 2000) ; message, duration in ms
 }
 
 ; Menu+3 -> Set Audio Output to Speakers and Input to Camera Mic
 #^!3::
 {
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t sonos)",,"Hide"
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " GET_AUDIO_DEV_SCRIPT " -t camera_mic)",,"Hide"
-  Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"Bedroom Speaker`" switch_to_tv",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t sonos)",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t camera_mic)",,"Hide"
+  Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"" SONOS_NAME "`" switch_to_tv",,"Hide"
+  ShowTemporaryMessage("🔊 Sonos Beam", 2000) ; message, duration in ms
 }
 
 ; Menu+T -> Restart TV
