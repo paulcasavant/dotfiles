@@ -3,7 +3,9 @@ import os
 import ctypes
 from PIL import Image, ImageDraw
 
-def add_black_bar_lossless(input_path, bar_height=2):
+BAR_HEIGHT = 4
+
+def add_black_bar_lossless(input_path, bar_height=BAR_HEIGHT):
     # Open original image and get ICC profile
     with open(input_path, 'rb') as f:
         img = Image.open(f)
