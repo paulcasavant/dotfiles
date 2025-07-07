@@ -71,22 +71,20 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
   ShowTemporaryMessage("🔅 Min Brightness", 2000)
 }
 
-; Menu+1 -> Set Input and Output Audio to Audeze Maxwell
-#^!1::
-{
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze)",,"Hide"
-  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze_mic)",,"Hide"
-  ShowTemporaryMessage("🎧 Audeze Maxwell", 2000)
-}
-
-; z::MsgBox(AUDIO_SCRIPT_PATH)
-
-; Menu+2 -> Set Audio Output to DAC and Input to Sennheiser Mic
+; Menu+1 -> Set Audio Output to DAC and Input to Sennheiser Mic
 #^!2::
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t dac)",,"Hide"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t mic)",,"Hide" ; Sennheiser mic
   ShowTemporaryMessage("🎧 Topping DX3 Pro+", 2000)
+}
+
+; Menu+2 -> Set Input and Output Audio to Audeze Maxwell
+#^!1::
+{
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze)",,"Hide"
+  Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze_mic)",,"Hide"
+  ShowTemporaryMessage("🎧 Audeze Maxwell", 2000)
 }
 
 ; Menu+3 -> Set Audio Output to Speakers and Input to Camera Mic
@@ -95,7 +93,7 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t sonos)",,"Hide"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t camera_mic)",,"Hide"
   Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"" SONOS_NAME "`" switch_to_tv",,"Hide"
-  ShowTemporaryMessage("🔊 Sonos Beam", 2000)
+  ShowTemporaryMessage("🔊 Sonos Arc", 2000)
 }
 
 ; Menu+T -> Restart TV
