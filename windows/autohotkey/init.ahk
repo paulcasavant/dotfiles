@@ -14,18 +14,6 @@ ShowTemporaryMessage(msg, duration := 2000) {
 ; CapsLock -> Ctrl
 CapsLock::Ctrl
 
-; ; Ctrl+H/J/K/L -> Left/Down/Up/Right
-; ^h::Send("{Left}")
-; ^j::Send("{Down}")
-; ^k::Send("{Up}")
-; ^l::Send("{Right}")
-
-; ; Alt+C/A/V/X -> Ctrl+C/A/V/X
-; !c::Send("^c")
-; !a::Send("^a")
-; !v::Send("^v")
-; !x::Send("^x")
-
 ; Ctrl+Volume Down -> Set Sonos Relative Volume -1 
 ^Volume_Down::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume -1",,"Hide"
 
@@ -58,6 +46,7 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
 {
   keywait "F13"
   Run A_ComSpec " /c python " BRIGHTNESS_SCRIPT_PATH " increase",,"Hide"
+  ShowTemporaryMessage("🔅 Brightness +", 2000)
 }
 
 ; Menu+, (<) -> Decrease TV relative brightness by 10
@@ -65,18 +54,21 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
 {
   keywait "F14"
   Run A_ComSpec " /c python " BRIGHTNESS_SCRIPT_PATH " decrease",,"Hide"
+  ShowTemporaryMessage("🔅 Brightness -", 2000)
 }
 
 ; Menu+/ -> Set TV brightness to maximum
 #^!/::
 {
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -backlight 100",,"Hide"
+  ShowTemporaryMessage("🔅 Max Brightness", 2000)
 }
 
 ; Menu+m -> Set TV brightness to low
 #^!m::
 {
   Run A_ComSpec " /c `"" LGTV_CLI_PATH "`" -backlight 25",,"Hide"
+  ShowTemporaryMessage("🔅 Min Brightness", 2000)
 }
 
 ; Menu+1 -> Set Input and Output Audio to Audeze Maxwell
@@ -84,7 +76,7 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze)",,"Hide"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t audeze_mic)",,"Hide"
-  ShowTemporaryMessage("🎧 Audeze Maxwell", 2000) ; message, duration in ms
+  ShowTemporaryMessage("🎧 Audeze Maxwell", 2000)
 }
 
 ; z::MsgBox(AUDIO_SCRIPT_PATH)
@@ -94,7 +86,7 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
 {
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t dac)",,"Hide"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t mic)",,"Hide" ; Sennheiser mic
-  ShowTemporaryMessage("🎧 Topping DX3 Pro+", 2000) ; message, duration in ms
+  ShowTemporaryMessage("🎧 Topping DX3 Pro+", 2000)
 }
 
 ; Menu+3 -> Set Audio Output to Speakers and Input to Camera Mic
@@ -103,7 +95,7 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t sonos)",,"Hide"
   Run A_ComSpec " /c powershell Set-AudioDevice -ID $(python " AUDIO_SCRIPT_PATH " -t camera_mic)",,"Hide"
   Run A_ComSpec " /c C:\python\Scripts\sonos.exe `"" SONOS_NAME "`" switch_to_tv",,"Hide"
-  ShowTemporaryMessage("🔊 Sonos Beam", 2000) ; message, duration in ms
+  ShowTemporaryMessage("🔊 Sonos Beam", 2000)
 }
 
 ; Menu+T -> Restart TV
@@ -126,6 +118,18 @@ F14::Run A_ComSpec " /c " SONOS_PATH " `"" SONOS_NAME "`" relative_volume +1",,"
     Run("wt.exe")  ; Launch Windows Terminal
     return
 }
+
+; ; Ctrl+H/J/K/L -> Left/Down/Up/Right
+; ^h::Send("{Left}")
+; ^j::Send("{Down}")
+; ^k::Send("{Up}")
+; ^l::Send("{Right}")
+
+; ; Alt+C/A/V/X -> Ctrl+C/A/V/X
+; !c::Send("^c")
+; !a::Send("^a")
+; !v::Send("^v")
+; !x::Send("^x")
 
 ; ; Hyper+F1 -> Normal Resolution with HDR On
 ; #^!F1::
