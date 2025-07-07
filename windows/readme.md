@@ -73,13 +73,14 @@
 4. Select the newly available **Ultimate Performance** plan.
 
 ## Applications
+* [AudioDeviceCmdlets](https://github.com/frgnca/AudioDeviceCmdlets)
 * [AutoActions](https://github.com/Codectory/AutoActions)
    >⚠️ Store in `C:\AutoActions`
 * [TaskbarX](https://apps.microsoft.com/detail/9PCMZ6BXK8GH?hl=en-us&gl=US&ocid=pdpshare)
    * Fix Steam Big Picture w/ Hidden Taskbar:
       1. Open *TaskbarX Configurator*
       2. Style > Style > Opaque > Apply
-      3. Startup > Set Delay to 0 sec > Create > Apply
+      3. Startup > Set Delay to 6 sec > Create > Apply
          >⚠️ **Remove** and **Create** again if any settings change.
 * [Twinkle Tray](https://github.com/xanderfrangos/twinkle-tray)
 * [Apollo](https://github.com/ClassicOldSong/Apollo)

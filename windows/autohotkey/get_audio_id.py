@@ -5,23 +5,21 @@ Retreives the ID for an audio device.
 import subprocess
 import argparse
 
-DAC_TYPE = 'dac'
-HEADPHONE = 'audeze'
-AUDEZE_MIC = 'mic'
-SONOS_TYPE = 'sonos'
-MIC_TYPE = 'mic'
-AUDEZE_MIC = 'audeze_mic'
-CAMERA_MIC = 'camera_mic'
-DAC_MIC = 'dac_mic'
+class Type:
+  DAC = 'dac'
+  MIC = 'mic'
+  AUDEZE = 'audeze'
+  AUDEZE_MIC = 'audeze_mic'
+  CAMERA_MIC = 'camera_mic'
+  SONOS = 'sonos'
 
 MAPPING = {
-  DAC_TYPE: 'FiiO USB DAC-E10',
-  HEADPHONE: 'Speakers (Game-Audeze Maxwell)',
-  AUDEZE_MIC: 'Microphone (Chat-Audeze Maxwell)',
-  CAMERA_MIC: 'Microphone (C922 Pro Stream Webcam)',
-  DAC_MIC: 'Microphone (High Definition Audio Device)',
-  SONOS_TYPE: 'LG TV SSCR2 (NVIDIA High Definition Audio)',
-  MIC_TYPE: 'Microphone (High Definition Audio Device)'
+  Type.DAC: 'Speakers (DX3 Pro+)',
+  Type.AUDEZE: 'Speakers (Game-Audeze Maxwell)',
+  Type.AUDEZE_MIC: 'Microphone (Chat-Audeze Maxwell)',
+  Type.CAMERA_MIC: 'Microphone (C922 Pro Stream Webcam)',
+  Type.MIC: 'Microphone (Realtek(R) Audio)',
+  Type.SONOS: 'LG TV SSCR2 (NVIDIA High Definition Audio)',
 }
 
 parser = argparse.ArgumentParser()
