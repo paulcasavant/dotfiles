@@ -6,15 +6,15 @@ import subprocess
 import argparse
 
 class Type:
-  DAC = 'dac'
-  MIC = 'mic'
-  AUDEZE = 'audeze'
-  AUDEZE_MIC = 'audeze_mic'
-  CAMERA_MIC = 'camera_mic'
-  SONOS = 'sonos'
+    DAC = 'dac'
+    MIC = 'mic'
+    AUDEZE = 'audeze'
+    AUDEZE_MIC = 'audeze_mic'
+    CAMERA_MIC = 'camera_mic'
+    SONOS = 'sonos'
 
 MAPPING = {
-  Type.DAC: 'Speakers (DX3 Pro+)',
+  Type.DAC: 'TOPPING USB DAC',
   Type.AUDEZE: 'Speakers (Game-Audeze Maxwell)',
   Type.AUDEZE_MIC: 'Microphone (Chat-Audeze Maxwell)',
   Type.CAMERA_MIC: 'Microphone (C922 Pro Stream Webcam)',
